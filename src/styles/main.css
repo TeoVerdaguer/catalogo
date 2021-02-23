@@ -5,14 +5,14 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    max-width: 1300px;
+.nav-bar-container {
+    max-width: auto;
     margin: auto;
     padding: 0 25px;
-    background: #e15f41;
+    background: #648FD9;
 }
 
 .navbar {
@@ -22,7 +22,7 @@ body {
 }
 
 div.logo img {
-    width: 150px;
+    width: 120px;
 }
 
 nav {
@@ -50,13 +50,30 @@ a {
     height: 27px;
 }
 
-.btn {
-    display: inline-block;
-    background: green;
-    color: #FF0000;
-    transition: background 0.5s;
+.navbar nav li a:hover {
+    font-weight: 600;
 }
 
-.btn:hover {
-    color: gray;
+.filters-container {
+    background-color: #5ED7E6;
+    width: 20%;
+    height: 1200px;
 }
+
+.filters {
+    background-color: #62BBF0;
+
+}
+
+div.filters h3 {
+    padding: 20px;
+}
+
+div.filters li {
+    padding: 10px 10px 10px 20px;
+}
+
+div.filters a:hover {
+    font-weight: 600;
+}
+
