@@ -1,124 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalogo Repuestos</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
-<body>
-    
-    <!-- Section 1 - navigation bar -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Seccion 1 - barra de navegacion -->
 
-            <nav>
-                <div class="logo">
-                    <h4>Repuestos</h4>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Cuenta</a></li>
-                    <li><a href="">Carrito</a></li>
-                    <!-- <a href=""><img src="img/cart.svg" alt="cart"></a> -->
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
+    <nav>
+      <div class="logo">
+        <h4>Repuestos</h4>
+      </div>
+      <ul class="nav-links">
+        <li><a href="">Home</a></li>
+        <li><a href="">Cuenta</a></li>
+        <li><a href="">Carrito</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
 
-    <!-- Section 2 - filters -->
+    <!-- Seccion 2 - filtros -->
     <aside class="filters-container">
-        <div class="filters">
-            <h3>Marcas</h3>
-            <ul>
-                <li><a href="">Todas</a></li>
-                <li><a href="">Peugeot</a></li>
-                <li><a href="">Fiat</a></li>
-                <li><a href="">Volkswagen</a></li>
-                <li><a href="">Renault</a></li>
-            </ul>
+      <div class="filters">
+        <h3>Marcas</h3>
+        <ul>
+          <li><a href="">Todas</a></li>
+          <li><a href="">Peugeot</a></li>
+          <li><a href="">Fiat</a></li>
+          <li><a href="">Volkswagen</a></li>
+          <li><a href="">Renault</a></li>
+        </ul>
 
-            <h3>Ordenar</h3>
-            <ul>
-                <li><a href="">Precio - menor a mayor</a></li>
-                <li><a href="">Precio - mayor a menor</a></li>
-                <li><a href="">A - Z</a></li>
-                <li><a href="">Z - A</a></li>
-            </ul>
-
-            <h3>Contacto</h3>
-            <ul>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Whatsapp</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Telefono</a></li>
-            </ul>
-        </div>
+        <h3>Ordenar</h3>
+        <ul>
+          <li><a href="">Precio - menor a mayor</a></li>
+          <li><a href="">Precio - mayor a menor</a></li>
+          <li><a href="">A - Z</a></li>
+          <li><a href="">Z - A</a></li>
+        </ul>
+      </div>
     </aside>
 
-    <!-- Section 3 - products list -->
+    <!-- Seccion 3 - lista de productos -->
 
     <div class="listing-container">
-        <div class="product">
-            <img class="product-img" src="img/products/homocinetica.jpg" alt="imagen-del-producto">
-            <div class="product-info">
-                <h3 class="product-title">Homocinetica Fiat Uno</h3>
-                <h4 class="product-price">$540</h4>
-            </div>
-        </div>
-
-        <div class="product">
-            <img class="product-img" src="img/products/termostato-amarok.webp" alt="imagen-del-producto">
-            <div class="product-info">
-                <h3 class="product-title">Termostato VW Amarok</h3>
-                <h4 class="product-price">$1000</h4>
-            </div>
-        </div>
-
-        <div class="product">
-            <img class="product-img" src="img/products/bomba-agua-fiat.webp" alt="imagen-del-producto">
-            <div class="product-info">
-                <h3 class="product-title">Bomba de agua Fiat motor tipo</h3>
-                <h4 class="product-price">$6570</h4>
-            </div>
-        </div>
-
-        <div class="product">
-            <img class="product-img" src="img/products/bobina-16v.jpg" alt="imagen-del-producto">
-            <div class="product-info">
-                <h3 class="product-title">Bobina motor 16 valvulas</h3>
-                <h4 class="product-price">$2546</h4>
-            </div>
-        </div>
-
-        <div class="product">
-            <img class="product-img" src="img/products/contactor-fiat.webp" alt="imagen-del-producto">
-            <div class="product-info">
-                <h3 class="product-title">Contactor Fiat Uno/Duna</h3>
-                <h4 class="product-price">$653</h4>
-            </div>
-        </div>
-
-        <div class="product">
-            <img class="product-img" src="img/products/mangueras-renault21.jpg" alt="imagen-del-producto">
-            <div class="product-info">
-                <h3 class="product-title">Mangueras Renault 21</h3>
-                <h4 class="product-price">$745</h4>
-            </div>
-        </div>
-        
+      <!-- el contenido de este div se carga desde JS -->
+      <div id="productos"></div>
     </div>
 
-    <!-- Section 4 - contact info -->
+    <!-- Seccion 4 - info de contacto -->
     <div class="contact-container">
-        <h2>contacto</h2>
+      <h2>CONTACTO</h2>
+      <ul>
+        <li><a href="">Facebook</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Telefono</a></li>
+        <li><a href="">Mail</a></li>
+      </ul>
     </div>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,61 @@
+{
+
+    "productos": [
+        {
+            "nombre": "Homocinetica Fiat Uno",
+            "precio": 540,
+            "marca": "fiat",
+            "codigo": "fiat001",
+            "descripcion": "Homocinetica Fiat Uno",
+            "img": "img/products/homocinetica.jpg",
+            "stock": 1
+        },
+        {
+            "nombre": "Termostato VW Amarok",
+            "precio": 1000,
+            "marca": "volkswagen",
+            "codigo": "volkswagen002",
+            "descripcion": "Termostato VW Amarok",
+            "img": "img/products/termostato-amarok.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Bomba de agua Fiat motor tipo",
+            "precio": 3000,
+            "marca": "fiat",
+            "codigo": "fiat002",
+            "descripcion": "Bomba de agua Fiat motor tipo",
+            "img": "img/products/bomba-agua-fiat.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Bobina Ford motor 16 valvulas",
+            "precio": 5690,
+            "marca": "ford",
+            "codigo": "ford001",
+            "descripcion": "Bobina Ford motor 16 valvulas",
+            "img": "img/products/bobina-16v.jpg",
+            "stock": 1
+        },
+        {
+            "nombre": "Contactor Fiat Uno/Duna",
+            "precio": 870,
+            "marca": "fiat",
+            "codigo": "fiat001",
+            "descripcion": "Contactor Fiat Uno/Duna",
+            "img": "img/products/contactor-fiat.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Mangueras Renault 21",
+            "precio": 745,
+            "marca": "renault",
+            "codigo": "renault002",
+            "descripcion": "Mangueras Renault 21",
+            "img": "img/products/mangueras-renault21.jpg",
+            "stock": 1
+        }
+
+    ]
+
+}

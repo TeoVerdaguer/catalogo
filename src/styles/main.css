@@ -61,6 +61,10 @@ nav {
     .nav-links {
         width: 60%;
     }
+
+    .body {
+        overflow-x: hidden;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -125,7 +129,7 @@ nav {
     float: left;
     background-color: #4F5969;
     width: 20%;
-    height: 1200px;
+    height: 100vh;
     padding-top: 30px;
 }
 
@@ -155,8 +159,8 @@ div.filters a:hover {
     font-weight: 600;
 }
 
-/* Products listing Section */
-.listing-container {
+/* Seccion lista de productos  */
+.listing-container #productos{
     display: flex;
     padding: 20px;
     height: auto;
@@ -171,6 +175,7 @@ div.filters a:hover {
     display: flex;
     flex-direction: column;
     width: 300px;
+    box-shadow: 7px 7px 10px #515869;
 }
 
 img.product-img {
@@ -193,7 +198,7 @@ img.product-img {
     padding-top: 10px;
 }
 
-/* Contact Section */
+/* Seccion de Contacto */
 
 .contact-container {
     width: auto;
@@ -206,4 +211,22 @@ img.product-img {
     justify-content: center;
     color: #FFFFFF;
     padding-top: 30px;
+}
+
+.contact-container ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.contact-container li {
+    list-style: none;
+}
+
+.contact-container li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.contact-container a:hover {
+    color: #e0e0e0;
 }
