@@ -1,6 +1,13 @@
 let listaProductos = ``;
+let listaClientes = [];
+let carrito = [];
+
 // guarda la lista de clientes del local storage en una variable
-let listaClientes = JSON.parse(localStorage.getItem('clientes'));
+if (localStorage.getItem('clientes')) {
+  listaClientes = JSON.parse(localStorage.getItem('clientes'));
+} else {
+  localStorage.setItem('clientes', '');
+}
 
 const ingresarNombreCliente = () => {
   let nombreCliente = prompt("Ingrese su nombre: ");
@@ -10,7 +17,7 @@ const ingresarNombreCliente = () => {
   // guarda la lista actualizada en el local storage
   localStorage.setItem('clientes', JSON.stringify(listaClientes));
 
-  console.log(JSON.parse(localStorage.getItem('clientes')));
+  document.getElementById("welcome-message").innerHTML = `Bienvenido ${nombreCliente}!`;
 };
 
 
@@ -41,11 +48,8 @@ const navSlide = () => {
 // accede a la data del JSON y muestra los productos
 $(function() {
   $.getJSON('data.json', function(data) {
-    console.log(data.productos);
-    console.log(data.productos.length);
     $(() => {
       for(let i = 0; i < data.productos.length; i++) {
-        console.log('vuelta ' + i);
         listaProductos += `
           <div class="product">
             <img
@@ -55,32 +59,45 @@ $(function() {
               <div class="product-info">
                 <h3 class="product-title">${data.productos[i].nombre}</h3>
                 <h4 class="product-price">$${data.productos[i].precio}</h4>
+                <a id="add-cart" onclick="agregarCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
               </div>
-          </div>`;
-        console.log(data.productos[i]);
-        // $('ul').append('<li>' + data.productos[i].nombre + ' ' + data.productos[i].precio + '</li>');
-        };
+          </div>`; 
+      };
     });
-    document.getElementById("productos").innerHTML = listaProductos;
+    document.getElementById("products").innerHTML = listaProductos;
   }).error(function() {
     console.log('error');
   });
 });
 
-function onInit() {
-  navSlide();
-
-  ingresarNombreCliente();
-  console.log(listaProductos);
-
-  console.log('lista de productos ' + listaProductos);
-
+// TODO: agrega producto al carrito
+function agregarCarrito() {
+  console.log("agregaste al carrito");
 }
 
-/** Crea funcion constructora de objetos */
+// Funcion constructora de objetos Cliente
 function Cliente(numeroCliente, nombre) {
   this.numeroCliente = numeroCliente;
   this.nombre = nombre;
 }
 
-onInit();
+// TODO: filtra las cards segun la busqueda
+function filterSearch() {
+  return true;
+};
+
+// accede a la barra de busqueda y la guarda en una variable
+let searchInput = document.getElementById("search-bar");
+
+searchInput.onkeyup = () => {
+  filterSearch(); // TODO: crear funcion para filtrar cards por busqueda.
+  console.log(searchInput.value);
+};
+
+// Chequea que se haya cargado el DOM antes de ejecutar las funciones
+$(document).ready( function() {
+  navSlide();
+  ingresarNombreCliente();
+
+
+});

@@ -9,6 +9,10 @@ body {
     background-color: #B3C8EC;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 /* ---- nav ---- */
 nav {
     display: flex;
@@ -61,17 +65,9 @@ nav {
     .nav-links {
         width: 60%;
     }
-
-    .body {
-        overflow-x: hidden;
-    }
 }
 
 @media screen and (max-width:768px) {
-    body {
-        overflow-x: hidden;
-    }
-
     .nav-links {
         position: absolute;
         right: 0px;
@@ -127,10 +123,11 @@ nav {
 .filters-container {
     display: flex;
     float: left;
-    background-color: #4F5969;
+
     width: 20%;
-    height: 100vh;
+    height: auto;
     padding-top: 30px;
+    flex-direction: column;
 }
 
 @media screen and (max-width:768px) {
@@ -139,28 +136,57 @@ nav {
     }
 }
 
-div.filters h3 {
+.filters-container #welcome-message {
+    color: #FFFFFF;
+    display: flex;
     padding: 20px;
+    font-size: 16px;
+}
+
+div.filters {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+div.filters h1 {
+    padding: 0px 20px;
     color: white;
 }
 
-div.filters li {
-    padding: 10px 10px 10px 20px;
-    color: white;
+div.search-box form {
+    padding: 10px 20px;
 }
 
-div.filters a {
+div.search-box form input {
+    height: 25px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+div.search-box form input:focus {
+    outline: none;
+}
+
+div.filter-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+}
+
+div.filter-box a {
     text-decoration: none;
     color: white;
-    padding-left: 15px;
+    padding: 5px 0px;
 }
 
-div.filters a:hover {
+div.filter-box a:hover {
     font-weight: 600;
 }
 
 /* Seccion lista de productos  */
-.listing-container #productos{
+.listing-container #products{
     display: flex;
     padding: 20px;
     height: auto;
@@ -196,6 +222,16 @@ img.product-img {
 
 .product-price {
     padding-top: 10px;
+}
+
+i.add-cart-icon {
+    padding: 5px;
+    color: #648FD9;
+}
+
+i.add-cart-icon:hover {
+    color: #5569A6;
+    cursor: pointer;
 }
 
 /* Seccion de Contacto */

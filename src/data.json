@@ -54,6 +54,60 @@
             "descripcion": "Mangueras Renault 21",
             "img": "img/products/mangueras-renault21.jpg",
             "stock": 1
+        },
+        {
+            "nombre": "Palier Sprinter 415 Lado Acompañante Derecho",
+            "precio": 49000,
+            "marca": "mercedes benz",
+            "codigo": "mercedes001",
+            "descripcion": "Palier Sprinter 415 Lado Acompañante Derecho",
+            "img": "img/products/palier-sprinter.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kit Distribucion Vw Amarok 2.0",
+            "precio": 22500,
+            "marca": "volkswagen",
+            "codigo": "volks003",
+            "descripcion": "Kit Distribucion Vw Amarok 2.0 Original Ina Germany + Dolz",
+            "img": "img/products/distribucion-amarok.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Tecla Comando Levanta Vidrios Vw Bora Golf Mk4 Passat",
+            "precio": 1590,
+            "marca": "volkswagen",
+            "codigo": "volks004",
+            "descripcion": "Tecla Comando Levanta Vidrios Vw Bora Golf Mk4 Passat",
+            "img": "img/products/tecla-vidrio-golf.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Carcasa Llave Peugeot 307 308",
+            "precio": 799,
+            "marca": "peugeot",
+            "codigo": "peu002",
+            "descripcion": "Carcasa Llave Navaja Peugeot 2 Bot 307 308 C/portapila",
+            "img": "img/products/llave-peugeot.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Carcasa Control Chevrolet Agile Astra Vectra Celta",
+            "precio": 599,
+            "marca": "chevrolet",
+            "codigo": "chev002",
+            "descripcion": "Carcasa Control Chevrolet Agile Astra Vectra Celta 2 botones",
+            "img": "img/products/carcasa-chevrolet.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kit Cables Bosch + Bujias Bosch Vw Gol Trend / Suran / Fox",
+            "precio": 3990,
+            "marca": "volkswagen",
+            "codigo": "volks005",
+            "descripcion": "Kit Cables Bosch + Bujias Bosch Vw Gol Trend / Suran / Fox",
+            "img": "img/products/kit-encendido-vw.webp",
+            "stock": 1
         }
 
     ]

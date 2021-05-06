@@ -13,6 +13,7 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Seccion 1 - barra de navegacion -->
@@ -35,23 +36,22 @@
 
     <!-- Seccion 2 - filtros -->
     <aside class="filters-container">
+      <h3 id="welcome-message"></h3>
       <div class="filters">
-        <h3>Marcas</h3>
-        <ul>
-          <li><a href="">Todas</a></li>
-          <li><a href="">Peugeot</a></li>
-          <li><a href="">Fiat</a></li>
-          <li><a href="">Volkswagen</a></li>
-          <li><a href="">Renault</a></li>
-        </ul>
-
-        <h3>Ordenar</h3>
-        <ul>
-          <li><a href="">Precio - menor a mayor</a></li>
-          <li><a href="">Precio - mayor a menor</a></li>
-          <li><a href="">A - Z</a></li>
-          <li><a href="">Z - A</a></li>
-        </ul>
+        <h1>Filtros</h1>
+        <!-- buscador -->
+        <div class="search-box">
+          <form action="" onsubmit="return false">
+            <input type="text" id="search-bar" placeholder="Buscar">
+          </form>
+        </div>
+        <div class="filter-box">
+          <a href="#" class="btn active" data-filter="todas">Todas</a>
+          <a href="#" class="btn active" data-filter="fiat">Fiat</a>
+          <a href="#" class="btn active" data-filter="renault">Renault</a>
+          <a href="#" class="btn active" data-filter="volkswagen">Volkswagen</a>
+          <a href="#" class="btn active" data-filter="peugeot">Peugeot</a>
+        </div>
       </div>
     </aside>
 
@@ -59,7 +59,7 @@
 
     <div class="listing-container">
       <!-- el contenido de este div se carga desde JS -->
-      <div id="productos"></div>
+      <div id="products"></div>
     </div>
 
     <!-- Seccion 4 - info de contacto -->
