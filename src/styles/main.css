@@ -118,6 +118,33 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* icono carrito */
+div.carrito-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.carrito-container img {
+    color: #FFFFFF;
+    height: 30px;
+    margin-right: 10px;
+}
+
+div#numero-carrito {
+    display: none;
+    background-color: #FFFFFF;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+p#numero {
+    color: #648FD9;
+    font-weight: 600;
+}
+
 /* ---- aside ---- */
 
 .filters-container {
@@ -232,6 +259,23 @@ i.add-cart-icon {
 i.add-cart-icon:hover {
     color: #5569A6;
     cursor: pointer;
+}
+
+div#mensaje-carrito {
+    background-color: white;
+    width: 20vw;
+    height: 10vh;
+    left: 10px;
+    top: 88vh;
+    position: fixed;
+    border-radius: 15px;
+    justify-content:flex-start;
+    align-items: center;
+    display: none;
+}
+
+div#mensaje-carrito p {
+    margin-left: 20px;
 }
 
 /* Seccion de Contacto */

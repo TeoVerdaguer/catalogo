@@ -1,6 +1,7 @@
 let listaProductos = ``;
 let listaClientes = [];
 let carrito = [];
+let listadoProductos = [];
 
 // guarda la lista de clientes del local storage en una variable
 if (localStorage.getItem('clientes')) {
@@ -50,6 +51,7 @@ $(function() {
   $.getJSON('data.json', function(data) {
     $(() => {
       for(let i = 0; i < data.productos.length; i++) {
+        listadoProductos.push(new Producto(data.productos[i].nombre, data.productos[i].precio));
         listaProductos += `
           <div class="product">
             <img
@@ -59,9 +61,9 @@ $(function() {
               <div class="product-info">
                 <h3 class="product-title">${data.productos[i].nombre}</h3>
                 <h4 class="product-price">$${data.productos[i].precio}</h4>
-                <a id="add-cart" onclick="agregarCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+                <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito(carrito)"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
               </div>
-          </div>`; 
+          </div>`;
       };
     });
     document.getElementById("products").innerHTML = listaProductos;
@@ -70,9 +72,32 @@ $(function() {
   });
 });
 
-// TODO: agrega producto al carrito
-function agregarCarrito() {
-  console.log("agregaste al carrito");
+
+class Producto {
+  constructor(nombre, precio) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.agregarAlCarrito = (carrito) => {
+      carrito.push(this);
+      console.log("agregaste " + nombre + " al carrito.");
+      mostrarCantCarrito();
+      actualizarCantCarrito(carrito);
+      mostrarMensajeCarrito(this);
+    };
+  }
+}
+
+function mostrarMensajeCarrito (producto) {
+  document.getElementById("mensaje-carrito").style.display = "flex";
+  document.getElementById("mensaje").innerHTML = "Agregaste " + producto.nombre + " al carrito.";
+}
+
+function mostrarCantCarrito () {
+  document.getElementById("numero-carrito").style.display = "flex";
+}
+
+function actualizarCantCarrito(carrito) {
+  document.getElementById("numero").innerHTML = carrito.length;
 }
 
 // Funcion constructora de objetos Cliente
@@ -98,6 +123,5 @@ searchInput.onkeyup = () => {
 $(document).ready( function() {
   navSlide();
   ingresarNombreCliente();
-
 
 });
