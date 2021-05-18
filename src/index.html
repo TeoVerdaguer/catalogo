@@ -26,7 +26,7 @@
         <li><a href="">Home</a></li>
         <li><a href="">Cuenta</a></li>
         <div class="carrito-container">
-          <li><a href=""><img src="/src/img/cart.svg" alt="carrito"></a></li>
+          <li><a onclick="abrirCarrito()"><img src="/src/img/cart.svg" alt="carrito"></a></li>
           <div id="numero-carrito">
             <p id="numero"></p>
           </div>
@@ -52,11 +52,11 @@
           </form>
         </div>
         <div class="filter-box">
-          <a href="#" class="btn active" data-filter="todas">Todas</a>
-          <a href="#" class="btn active" data-filter="fiat">Fiat</a>
-          <a href="#" class="btn active" data-filter="renault">Renault</a>
-          <a href="#" class="btn active" data-filter="volkswagen">Volkswagen</a>
-          <a href="#" class="btn active" data-filter="peugeot">Peugeot</a>
+          <a href="#" class="btn active" id="todas">Todas</a>
+          <a href="#" class="btn active" id="fiat">Fiat</a>
+          <a href="#" class="btn active" id="renault">Renault</a>
+          <a href="#" class="btn active" id="volkswagen">Volkswagen</a>
+          <a href="#" class="btn active" id="peugeot">Peugeot</a>
         </div>
       </div>
     </aside>
@@ -70,6 +70,30 @@
 
     <div id="mensaje-carrito">
       <p id="mensaje"></p>
+    </div>
+
+    <div id="carrito-container">
+      <div id="modulo-carrito">
+        <div class="titulo">
+          <h1>Carrito de compras</h1>
+          <hr size="2" color="#648FD9">
+        </div>
+
+        <table>
+          <tr>
+            <th>Descripcion</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <div id="produ"></div>
+      </div>
     </div>
 
     <!-- Seccion 4 - info de contacto -->

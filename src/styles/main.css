@@ -228,7 +228,7 @@ div.filter-box a:hover {
     display: flex;
     flex-direction: column;
     width: 300px;
-    box-shadow: 7px 7px 10px #515869;
+    min-height: 300px;
 }
 
 img.product-img {
@@ -275,7 +275,50 @@ div#mensaje-carrito {
 }
 
 div#mensaje-carrito p {
-    margin-left: 20px;
+    margin: 20px;
+}
+
+div#carrito-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+div#modulo-carrito {
+    background-color: #FFFFFF;
+    width: 80vw;
+    height: 80vh;
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    box-shadow: 7px 7px 10px #303030;
+}
+
+div.titulo {
+    margin: 30px;
+    color: #648FD9;
+}
+
+div#modulo-carrito table {
+    margin: 10px 30px;
+}
+
+table th {
+    text-align: left;
+
+}
+
+ul.productos-js {
+    margin: 60px;
 }
 
 /* Seccion de Contacto */
