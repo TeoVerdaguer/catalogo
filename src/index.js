@@ -2,7 +2,6 @@ let listaProductos = ``;
 let listaClientes = [];
 let carrito = [];
 let listadoProductos = [];
-let prod = ``;
 let listaFiltradaProductos = ``;
 
 // guarda la lista de clientes del local storage en una variable
@@ -70,7 +69,6 @@ $(function() {
       };
     });
     document.getElementById("products").innerHTML = listaProductos;
-    // filtrarProductos("fiat");
   }).error(function() {
     console.log('error');
   });
@@ -83,9 +81,10 @@ class Producto {
     this.precio = precio;
     this.marca = marca;
     this.img = img;
+    this.cantidad = 0;
     this.agregarAlCarrito = (carrito) => {
+      this.cantidad += 1;
       carrito.push(this);
-      console.log("agregaste " + nombre + " al carrito.");
       mostrarCantCarrito();
       actualizarCantCarrito(carrito);
       mostrarMensajeCarrito(this);
@@ -95,7 +94,7 @@ class Producto {
 
 function mostrarMensajeCarrito (producto) {
   $("#mensaje-carrito").slideDown(400, () => {
-    $("#mensaje-carrito").delay(2000).slideUp(400);
+    $("#mensaje-carrito").delay(1000).slideUp(400);
   });
   document.getElementById("mensaje-carrito").style.display = "flex";
   document.getElementById("mensaje").innerHTML = "Agregaste " + producto.nombre + " al carrito.";
@@ -120,18 +119,29 @@ function abrirCarrito() {
       }
     }
   }
-  cargarCarrito();
+  if (true) {
+    cargarCarrito();
+    console.log(prod);
+  }
 }
+let cantItems = 0;
 
 function cargarCarrito() {
-  for (let i = 0; i < carrito.length; i++) {
-    prod += `
-    <ul class="productos-js">
-    <li>${carrito[i].nombre}</li> 
-    </ul>
-    `
+  let prod = document.getElementById("produ").innerHTML;
+
+  if (carrito.length != cantItems) {
+    for (let i = 0; i < carrito.length; i++) {
+      prod += `
+      <tr>
+        <td>${carrito[i].nombre}</td>
+        <td>${carrito[i].cantidad}</td>
+        <td>${carrito[i].precio}</td>
+      </tr>
+      `
+    }
+    document.getElementById("produ").innerHTML = prod;
+    cantItems = carrito.length;
   }
-  document.getElementById("produ").innerHTML = prod;
 }
 
 

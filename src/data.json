@@ -108,6 +108,78 @@
             "descripcion": "Kit Cables Bosch + Bujias Bosch Vw Gol Trend / Suran / Fox",
             "img": "img/products/kit-encendido-vw.webp",
             "stock": 1
+        },
+        {
+            "nombre": "Organizadora P/ Auto Porta Posavaso, Botella, Teléfonos",
+            "precio": 879,
+            "marca": "volkswagen",
+            "codigo": "volks006",
+            "descripcion": "Organizadora P/ Auto Porta Posavaso, Botella, Teléfonos",
+            "img": "img/products/organizador-para-auto.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Juego X 4 Tazas Vw Gol / Gol Trend Rodado 14",
+            "precio": 2749,
+            "marca": "volkswagen",
+            "codigo": "volks007",
+            "descripcion": "Juego X 4 Tazas Vw Gol / Gol Trend Rodado 14 Pulgadas Negra Con Logo",
+            "img": "img/products/tazas-vw-gol.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "4 Tazas Rodado 14 Fiat Palio Siena Uno",
+            "precio": 2839,
+            "marca": "fiat",
+            "codigo": "fiat004",
+            "descripcion": "4 Tazas Rodado 14 Fiat Palio Siena Uno Gris Plata Auto",
+            "img": "img/products/tazas-fiat.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Llave Tecla Baliza Fiat Nueva Ducato Furgon",
+            "precio": 15392,
+            "marca": "fiat",
+            "codigo": "fiat005",
+            "descripcion": "Llave Tecla Baliza Fiat Nueva Ducato Furgon 2010",
+            "img": "img/products/llave-tecla-fiat.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Chapón Cubrecarter Peugeot 2008 / 208",
+            "precio": 6768,
+            "marca": "peugeot",
+            "codigo": "peugeot006",
+            "descripcion": "Chapón Cubrecarter Peugeot 2008 / 208",
+            "img": "img/products/cubrecarter-peugeot-2008.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Caja De Agua Sin Termostato Peugeot 208 1.5 Nafta Original",
+            "precio": 9210,
+            "marca": "peugeot",
+            "codigo": "peugeot007",
+            "descripcion": "Caja De Agua Sin Termostato Peugeot 208 1.5 Nafta Original",
+            "img": "img/products/caja-agua-peugeot.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Termostato De Agua De Peugeot 208",
+            "precio": 7362,
+            "marca": "peugeot",
+            "codigo": "peugeot008",
+            "descripcion": "Termostato De Agua De Peugeot 208 1.5 Nafta",
+            "img": "img/products/termostato-peugeot-208.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kit Juego X 2 Junta Homocinetica Renault R9 R11",
+            "precio": 4810,
+            "marca": "renault",
+            "codigo": "renault007",
+            "descripcion": "Kit Juego X 2 Junta Homocinetica Renault R9 R11 Corven",
+            "img": "img/products/homocinetica-renault-9.webp",
+            "stock": 1
         }
 
     ]
