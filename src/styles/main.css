@@ -15,9 +15,11 @@ html, body {
 
 /* ---- nav ---- */
 nav {
+    position: fixed;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100vw;
     min-height: 8vh;
     background-color: #648FD9;
     font-family: 'Poppins', sans-serif;
@@ -150,9 +152,9 @@ p#numero {
 .filters-container {
     display: flex;
     float: left;
-
     width: 20%;
     height: auto;
+    margin: 80px 0;
     padding-top: 30px;
     flex-direction: column;
 }
@@ -216,8 +218,9 @@ div.filter-box a:hover {
 .listing-container #products{
     display: flex;
     padding: 20px;
-    height: auto;
+    margin: 80px 0;
     flex-wrap: wrap;
+    min-height: 63vh;
 }
 
 .product {
@@ -229,6 +232,7 @@ div.filter-box a:hover {
     flex-direction: column;
     width: 300px;
     min-height: 300px;
+    max-height: 500px;
 }
 
 img.product-img {
@@ -301,6 +305,7 @@ div#modulo-carrito {
     border-radius: 20px;
     flex-direction: column;
     box-shadow: 7px 7px 10px #303030;
+    overflow: auto;
 }
 
 div.titulo {
@@ -327,6 +332,8 @@ ul.productos-js {
     width: auto;
     height: 20vh;
     background-color: #648FD9;
+    width: 100vw;
+    position: absolute;
 }
 
 .contact-container h2 {

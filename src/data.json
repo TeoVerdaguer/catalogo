@@ -58,7 +58,7 @@
         {
             "nombre": "Palier Sprinter 415 Lado Acompañante Derecho",
             "precio": 49000,
-            "marca": "mercedes benz",
+            "marca": "mercedes-benz",
             "codigo": "mercedes001",
             "descripcion": "Palier Sprinter 415 Lado Acompañante Derecho",
             "img": "img/products/palier-sprinter.webp",
@@ -179,6 +179,105 @@
             "codigo": "renault007",
             "descripcion": "Kit Juego X 2 Junta Homocinetica Renault R9 R11 Corven",
             "img": "img/products/homocinetica-renault-9.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Repuesto Buje Techo Renault Koleos Original",
+            "precio": 1500,
+            "marca": "renault",
+            "codigo": "renault008",
+            "descripcion": "Repuesto Buje Techo Renault Koleos Original",
+            "img": "img/products/buje-techo-koleos.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Amortiguador Porton Baul Trasero Vw Suran",
+            "precio": 900,
+            "marca": "volkswagen",
+            "codigo": "volkswagen008",
+            "descripcion": "Amortiguador Porton Baul Trasero Vw Suran",
+            "img": "img/products/amortiguador-porton-suran.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kt Tren Delantero Renault R12",
+            "precio": 24000,
+            "marca": "renault",
+            "codigo": "renault008",
+            "descripcion": "Kt Tren Delantero Renault R12 (repuestos Nacionales)",
+            "img": "img/products/kit-delantero-r12.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kit De Distribución Ford Ranger 3.0 Mwm",
+            "precio": 11900,
+            "marca": "ford",
+            "codigo": "ford008",
+            "descripcion": "Kit De Distribución Ford Ranger 3.0 Mwm Brasil",
+            "img": "img/products/distribucion-ranger.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kit Embrague Sachs Chevrolet Corsa Classic 1.4",
+            "precio": 7350,
+            "marca": "chevrolet",
+            "codigo": "chevrolet009",
+            "descripcion": "Kit Embrague Sachs Chevrolet Corsa Classic 1.4 . Sachs Original",
+            "img": "img/products/kit-embrague-corsa.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Llave De Luces Euroswitch Cromada Vw Bora Golf Mk4",
+            "precio": 2500,
+            "marca": "volkswagen",
+            "codigo": "volkswagen009",
+            "descripcion": "Llave De Luces Euroswitch Cromada Vw Bora Golf Mk4 3bd941531",
+            "img": "img/products/llave-luces-bora-golf-mk4.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Bobina Lapiz Renault K4m 1.6 16v Clio - Kangoo - Me",
+            "precio": 1400,
+            "marca": "renault",
+            "codigo": "renault009",
+            "descripcion": "Bobina Lapiz Renault K4m 1.6 16v Clio - Kangoo - Me",
+            "img": "img/products/bobina-renault-k4m.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Kit Discos Y Pastillas P/ Volkswagen Fox Crossfox Suran",
+            "precio": 5824,
+            "marca": "volkswagen",
+            "codigo": "volkswagen010",
+            "descripcion": "Kit Discos Y Pastillas P/ Volkswagen Fox Crossfox Suran",
+            "img": "img/products/discos-fox-suran-crossfox.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Tecla Levantavidrios Peugeot 206 207",
+            "precio": 2700,
+            "marca": "peugeot",
+            "codigo": "peugeot009",
+            "descripcion": "Tecla Levantavidrios Peugeot 206 207 C/one Touch C/ Espejo",
+            "img": "img/products/tecla-peugeot-206-207.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Valvula Reguladora De Presion Bosch Amarok",
+            "precio": 16590,
+            "marca": "volkswagen",
+            "codigo": "volkswagen011",
+            "descripcion": "Valvula Reguladora De Presion Bosch Amarok 0281 006 074",
+            "img": "img/products/valvula-presion-amarok.webp",
+            "stock": 1
+        },
+        {
+            "nombre": "Parasol Izquierdo Chevrolet Corsa/Classic",
+            "precio": 849,
+            "marca": "chevrolet",
+            "codigo": "chevrolet008",
+            "descripcion": "Parasol Izquierdo Chevrolet Corsa / Classic / Calidad Orig.",
+            "img": "img/products/parasol-corsa-classic.webp",
             "stock": 1
         }
 

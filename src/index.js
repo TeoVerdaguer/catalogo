@@ -3,6 +3,7 @@ let listaClientes = [];
 let carrito = [];
 let listadoProductos = [];
 let listaFiltradaProductos = ``;
+let tablaProdu = document.getElementById("produ").innerHTML;
 
 // guarda la lista de clientes del local storage en una variable
 if (localStorage.getItem('clientes')) {
@@ -63,7 +64,7 @@ $(function() {
               <div class="product-info">
                 <h3 class="product-title">${data.productos[i].nombre}</h3>
                 <h4 class="product-price">$${data.productos[i].precio}</h4>
-                <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito(carrito)"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+                <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
               </div>
           </div>`;
       };
@@ -82,11 +83,10 @@ class Producto {
     this.marca = marca;
     this.img = img;
     this.cantidad = 0;
-    this.agregarAlCarrito = (carrito) => {
+    this.agregarAlCarrito = () => {
       this.cantidad += 1;
-      carrito.push(this);
       mostrarCantCarrito();
-      actualizarCantCarrito(carrito);
+      actualizarCantCarrito();
       mostrarMensajeCarrito(this);
     };
   }
@@ -104,44 +104,58 @@ function mostrarCantCarrito () {
   document.getElementById("numero-carrito").style.display = "flex";
 }
 
-function actualizarCantCarrito(carrito) {
-  document.getElementById("numero").innerHTML = carrito.length;
+function actualizarCantCarrito() {
+  let cantCarrito = 0;
+  listadoProductos.forEach( (elem) => {
+    if(elem.cantidad > 0) {
+      cantCarrito += elem.cantidad;
+    }
+  });
+
+  document.getElementById("numero").innerHTML = cantCarrito;
 }
 
 
 function abrirCarrito() {
   document.getElementById("carrito-container").style.display = "flex";
 
+  cargarCarrito();
+  cerrarCarrito();
+}
+
+// cerrar carrito
+function cerrarCarrito() {
   if (document.getElementById("carrito-container").style.display === "flex") {
     window.onclick = function(event) {
       if (event.target.id === "carrito-container" && event.target.id != "modulo-carrito") {
+        document.getElementById("produ").innerHTML = `
+        <tr>
+          <th>Descripcion</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+        </tr>`;
+        tablaProdu = document.getElementById("produ").innerHTML;
         $("#carrito-container").hide();
       }
     }
   }
-  if (true) {
-    cargarCarrito();
-    console.log(prod);
-  }
 }
-let cantItems = 0;
 
 function cargarCarrito() {
-  let prod = document.getElementById("produ").innerHTML;
-
-  if (carrito.length != cantItems) {
-    for (let i = 0; i < carrito.length; i++) {
-      prod += `
-      <tr>
-        <td>${carrito[i].nombre}</td>
-        <td>${carrito[i].cantidad}</td>
-        <td>${carrito[i].precio}</td>
-      </tr>
-      `
-    }
-    document.getElementById("produ").innerHTML = prod;
-    cantItems = carrito.length;
-  }
+  // foreach in carrito if cant > 0 mostrar
+  listadoProductos.forEach( (element) => { 
+      if(element.cantidad > 0){
+        tablaProdu += `
+        <tr>
+          <td>${element.nombre}</td>
+          <td>${element.cantidad}</td>
+          <td>${element.precio * element.cantidad}</td>
+        </tr>
+        `
+      }
+  });
+  
+  document.getElementById("produ").innerHTML = tablaProdu;
 }
 
 
@@ -151,17 +165,17 @@ function Cliente(numeroCliente, nombre) {
   this.nombre = nombre;
 }
 
-function generarCardsProductos(arrayDeProductos) {
+function generarCardsProductos(tablaProdu) {
   listaFiltradaProductos += `
           <div class="product">
             <img
               class="product-img"
-              src="${arrayDeProductos.img}"
+              src="${tablaProdu.img}"
               alt="imagen-del-producto"/>
               <div class="product-info">
-                <h3 class="product-title">${arrayDeProductos.nombre}</h3>
-                <h4 class="product-price">$${arrayDeProductos.precio}</h4>
-                <a id="add-cart" onclick="${arrayDeProductos}.agregarAlCarrito(carrito)"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+                <h3 class="product-title">${tablaProdu.nombre}</h3>
+                <h4 class="product-price">$${tablaProdu.precio}</h4>
+                <a id="add-cart" onclick="${tablaProdu}.agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
               </div>
           </div>`;
 }
@@ -171,7 +185,6 @@ function filtrarProductos(marca) {
 
   for(let i = 0; i < listadoProductos.length; i++) {
     if(listadoProductos[i].marca === marca) {
-      console.log(listadoProductos);
       generarCardsProductos(listadoProductos[i]);
     } else if (marca === "todas") {
       generarCardsProductos(listadoProductos[i]);
@@ -181,22 +194,39 @@ function filtrarProductos(marca) {
   listaFiltradaProductos = ``;
 };
 
-// filtra las cards segun la busqueda
+// filtra las cards
 $(".active").click( (event) => {
   let idFiltro = event.target.id;
-  console.log(idFiltro);
   filtrarProductos(idFiltro);
 });
 
 // accede a la barra de busqueda y la guarda en una variable
 let searchInput = document.getElementById("search-bar");
 
+// searchInput.addEventListener("keyup", (event) => {
+//   if (event.key === "Enter") {
+//     filtrarPorBusqueda(searchInput.value);
+//   }
+// })
 searchInput.onkeyup = () => {
-  filterSearch(); // TODO: crear funcion para filtrar cards por busqueda.
-  console.log(searchInput.value);
+  filtrarPorBusqueda(searchInput.value);
 };
 
-// Chequea que se haya cargado el DOM antes de ejecutar las funciones
+// filtra las cards de acuerdo al contenido de la busqueda 
+function filtrarPorBusqueda(valor) {
+
+  for(let i = 0; i < listadoProductos.length; i++) {
+    if((listadoProductos[i].nombre).toLowerCase().includes(valor)){
+      generarCardsProductos(listadoProductos[i]);
+    } else if (valor === "") {
+      generarCardsProductos(listadoProductos[i]);
+    }
+  }
+  document.getElementById("products").innerHTML = listaFiltradaProductos;
+  listaFiltradaProductos = ``;
+}
+
+
 $(document).ready( function() {
   navSlide();
   ingresarNombreCliente();
