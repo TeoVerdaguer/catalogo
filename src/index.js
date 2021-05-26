@@ -12,7 +12,12 @@ if (localStorage.getItem('clientes')) {
   localStorage.setItem('clientes', '');
 }
 
-const ingresarNombreCliente = () => {
+$("#boton-login").on("click", () => {
+  $("#modal-login").hide();
+});
+
+const mostrarLogin = () => {
+  // $("#modal-login").show;
   // let nombreCliente = prompt("Ingrese su nombre: ");
   let nombreCliente = "Mateo";
   let numeroCliente = Math.floor(Math.random() * 1000);
@@ -84,7 +89,13 @@ class Producto {
     this.img = img;
     this.cantidad = 0;
     this.agregarAlCarrito = () => {
-      this.cantidad += 1;
+      if (this.cantidad === 0) {
+        this.cantidad += 1;
+        carrito.push(this);
+      } else {
+        this.cantidad += 1;
+      }
+      carrito.push(this);
       mostrarCantCarrito();
       actualizarCantCarrito();
       mostrarMensajeCarrito(this);
@@ -143,19 +154,25 @@ function cerrarCarrito() {
 
 function cargarCarrito() {
   // foreach in carrito if cant > 0 mostrar
-  listadoProductos.forEach( (element) => { 
+  listadoProductos.forEach( (element) => {
       if(element.cantidad > 0){
         tablaProdu += `
         <tr>
           <td>${element.nombre}</td>
           <td>${element.cantidad}</td>
           <td>${element.precio * element.cantidad}</td>
+          <td><a onclick="" class="borrar-carrito fas fa-times fa-lg"></a></td>
         </tr>
         `
       }
   });
-  
+
   document.getElementById("produ").innerHTML = tablaProdu;
+
+  $(".borrar-carrito").on("click", (event) => {
+    var boton = event.target;
+    boton.parentElement.parentElement.remove();
+  });
 }
 
 
@@ -165,17 +182,17 @@ function Cliente(numeroCliente, nombre) {
   this.nombre = nombre;
 }
 
-function generarCardsProductos(tablaProdu) {
+function generarCardsProductos(i) {
   listaFiltradaProductos += `
           <div class="product">
             <img
               class="product-img"
-              src="${tablaProdu.img}"
+              src="${listadoProductos[i].img}"
               alt="imagen-del-producto"/>
               <div class="product-info">
-                <h3 class="product-title">${tablaProdu.nombre}</h3>
-                <h4 class="product-price">$${tablaProdu.precio}</h4>
-                <a id="add-cart" onclick="${tablaProdu}.agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+                <h3 class="product-title">${listadoProductos[i].nombre}</h3>
+                <h4 class="product-price">$${listadoProductos[i].precio}</h4>
+                <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
               </div>
           </div>`;
 }
@@ -185,9 +202,9 @@ function filtrarProductos(marca) {
 
   for(let i = 0; i < listadoProductos.length; i++) {
     if(listadoProductos[i].marca === marca) {
-      generarCardsProductos(listadoProductos[i]);
+      generarCardsProductos(i);
     } else if (marca === "todas") {
-      generarCardsProductos(listadoProductos[i]);
+      generarCardsProductos(i);
     };
   };
   document.getElementById("products").innerHTML = listaFiltradaProductos;
@@ -212,7 +229,7 @@ searchInput.onkeyup = () => {
   filtrarPorBusqueda(searchInput.value);
 };
 
-// filtra las cards de acuerdo al contenido de la busqueda 
+// filtra las cards de acuerdo al contenido de la busqueda
 function filtrarPorBusqueda(valor) {
 
   for(let i = 0; i < listadoProductos.length; i++) {
@@ -226,8 +243,24 @@ function filtrarPorBusqueda(valor) {
   listaFiltradaProductos = ``;
 }
 
+function expandirCuenta() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var abrirDropdown = dropdowns[i];
+      if (abrirDropdown.classList.contains('show')) {
+        abrirDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 $(document).ready( function() {
   navSlide();
-  ingresarNombreCliente();
+  mostrarLogin();
 });

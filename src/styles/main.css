@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #B3C8EC;
+    background-color: #7f97c2;
 }
 
 html, body {
@@ -22,12 +23,12 @@ nav {
     width: 100vw;
     min-height: 8vh;
     background-color: #648FD9;
-    font-family: 'Poppins', sans-serif;
 }
 
 .nav-links {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 35%;
 }
 
@@ -40,8 +41,11 @@ nav {
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+}
 
+.nav-links a:hover {
+    color: #d2d2d2;
 }
 
 .logo {
@@ -51,6 +55,50 @@ nav {
     font-size: 20px;
 }
 
+/* Dropdown Cuenta */
+.dropbtn {
+    background-color: #648FD9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #648FD9;
+    min-width: 160px;
+    z-index: 1;
+    top: 40px;
+}
+
+.dropdown-content a {
+    color: #FFFFFF;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dropdown button:hover {
+    color: #d2d2d2;
+}
+
+.show {display:block;}
+
+/* Burger menu para vista mobile */
 .burger {
     display: none;
 }
@@ -126,10 +174,14 @@ div.carrito-container {
     justify-content: space-between;
 }
 
-div.carrito-container img {
-    color: #FFFFFF;
+div.carrito-container i {
     height: 30px;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+div.carrito-container i:hover {
+    color: #d2d2d2;
 }
 
 div#numero-carrito {
@@ -145,6 +197,18 @@ div#numero-carrito {
 p#numero {
     color: #648FD9;
     font-weight: 600;
+}
+
+div#modal-login {
+    height: 100vh;
+    width: 100vw;
+    background-color: #7f97c2;
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* ---- aside ---- */
@@ -326,21 +390,32 @@ ul.productos-js {
     margin: 60px;
 }
 
+a.borrar-carrito:hover {
+    color: red;
+}
+
+a.borrar-carrito:active {
+    color: #940505;
+}
+
 /* Seccion de Contacto */
 
 .contact-container {
-    width: auto;
-    height: 20vh;
-    background-color: #648FD9;
     width: 100vw;
-    position: absolute;
+    height: 30vh;
+    background-color: #648FD9;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .contact-container h2 {
     display: flex;
     justify-content: center;
     color: #FFFFFF;
-    padding-top: 30px;
+    padding: 10px;
 }
 
 .contact-container ul {

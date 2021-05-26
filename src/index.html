@@ -16,17 +16,36 @@
     <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- Seccion 1 - barra de navegacion -->
+  
+    <!-- Modal login -->
+    <div id="modal-login">
+      <h1>REPUESTOS</h1>
+      <p>Inicie sesion para poder acceder al catalogo</p>
+      <label for="username">Numero de cliente</label>
+      <input type="text" name="username" id="username-input">
+      <button id="boton-login" type="submit">Ingresar</button>
+      <label>
+        <input type="checkbox" name="remeber" id="remeber-checkbox"> Recordar mis datos
+      </label>
+    </div>
 
+    <!-- Seccion 1 - barra de navegacion -->
     <nav>
       <div class="logo">
         <h4>Repuestos</h4>
       </div>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="">Cuenta</a></li>
+
+        <div class="dropdown">
+          <button onclick="expandirCuenta()" class="dropbtn">Cuenta</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Cerrar Sesion</a>
+          </div>
+        </div>
+
         <div class="carrito-container">
-          <li><a onclick="abrirCarrito()"><img src="/src/img/cart.svg" alt="carrito"></a></li>
+          <li><a onclick="abrirCarrito()"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
           <div id="numero-carrito">
             <p id="numero"></p>
           </div>
