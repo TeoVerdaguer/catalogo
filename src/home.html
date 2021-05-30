@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo Repuestos</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <!-- Seccion 1 - barra de navegacion -->
+    <nav>
+      <div class="logo">
+        <h4>Repuestos</h4>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+
+        <div class="dropdown">
+          <button onclick="expandirCuenta()" class="dropbtn">Cuenta</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a id="btn-cerrar-sesion" href="/src/index.html">Cerrar Sesion</a>
+          </div>
+        </div>
+
+        <div class="carrito-container">
+          <li><a onclick="abrirCarrito()"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
+          <div id="numero-carrito">
+            <p id="numero"></p>
+          </div>
+        </div>
+    </div>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <!-- Seccion 2 - filtros -->
+    <aside class="filters-container">
+      <h3 id="welcome-message"></h3>
+      <hr class="aside-divider" size="4" color="#FFFFFF">
+      <div class="filters">
+        <h1>Filtros</h1>
+
+        <!-- buscador -->
+        <div class="search-box">
+          <form action="" onsubmit="return false">
+            <input type="text" id="search-bar" placeholder="Buscar">
+          </form>
+        </div>
+        <div class="filter-box">
+          <a href="#" class="btn active" id="todas">Todas</a>
+          <a href="#" class="btn active" id="fiat">Fiat</a>
+          <a href="#" class="btn active" id="renault">Renault</a>
+          <a href="#" class="btn active" id="volkswagen">Volkswagen</a>
+          <a href="#" class="btn active" id="peugeot">Peugeot</a>
+          <a href="#" class="btn active" id="ford">Ford</a>
+          <a href="#" class="btn active" id="mercedes-benz">Mercedes Benz</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Seccion 3 - lista de productos -->
+
+    <div class="listing-container">
+      <!-- el contenido de este div se carga desde JS -->
+      <div id="products"></div>
+    </div>
+
+    <div id="mensaje-carrito">
+      <p id="mensaje"></p>
+    </div>
+
+    <div id="carrito-container">
+      <div id="modulo-carrito">
+
+        <div class="titulo">
+          <h1>Carrito de compras</h1>
+          <hr size="2" color="#648FD9">
+        </div>
+
+        <table id="produ">
+          <tr>
+            <th></th>
+            <th>Descripcion</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+    <!-- Seccion 4 - info de contacto -->
+    <div class="footer">
+      <div class="contact-container">
+        <div class="social-container">
+          <h2>CONTACTO</h2>
+          <ul>
+            <li class="social-item"><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square fa-2x"></i>Facebook</a></li>
+            <li class="social-item"><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square fa-2x"></i>Instagram</a></li>
+            <li class="social-item"><a href="tel:123456789" target="_blank"><i class="fas fa-phone-square-alt fa-2x"></i>Telefono</a></li>
+            <li class="social-item"></i><a href="mailto:" target="_blank"><i class="fas fa-envelope-square fa-2x" fa-lg></i>Mail</a></li>
+          </ul>
+        </div>
+        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108977.23050065644!2d-64.26438364404248!3d-31.39928763608521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432985f478f5b69%3A0xb0a24f9a5366b092!2sC%C3%B3rdoba%2C%20Cordoba!5e0!3m2!1sen!2sar!4v1622158121429!5m2!1sen!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="leyenda">
+        <p>Desarrollado por Mateo Verdaguer | 2021 | @teoverdaguer</p>
+      </div>
+    </div>
+
+    <script src="home.js"></script>
+  </body>
+</html>
