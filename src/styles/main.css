@@ -20,72 +20,6 @@ hr.aside-divider {
     width: 70%;
 }
 
-/*  Modal Login */
-
-div.login-container {
-  height: 100vh;
-  width: 100vw;
-  background-color: #7f97c2;
-  display: flex;
-  position: fixed;
-  z-index: 3;
-  align-items: center;
-  justify-content: center;
-}
-
-#modal-login {
-  height: 90vh;
-  width: 90vw;
-  border: 3px solid #e7e7e7;
-  border-radius: 8px;
-  padding: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#modal-login h1 {
-  font-size: 50px;
-  padding: 20px;
-}
-#mensaje-login {
-  font-size: 20px;
-  padding: 30px;
-}
-
-#input-error {
-  position: relative;
-  color: #b80000;
-  font-weight: 700;
-  display: none;
-}
-
-#username-input {
-  height: 30px;
-  padding: 10px;
-  text-align: center;
-}
-
-#username-input::placeholder {
-  padding: 15px;
-}
-
-#modal-login button {
-  margin: 10px;
-  width: 120px;
-  height: 40px;
-  background-color: #5f6a7d;
-  border: none;
-  border-radius: 4px;
-  color: #ffffff;
-  font-size: 16px;
-}
-
-#modal-login button:hover {
-  background-color: #303030;
-}
-
 /* ---- nav ---- */
 nav {
   position: fixed;
@@ -411,6 +345,11 @@ div#mensaje-carrito p {
   margin: 20px;
 }
 
+.sin-stock {
+  color: #a80202;
+  font-weight: 600;
+}
+
 div#carrito-container {
   display: none;
   width: 100vw;
@@ -454,16 +393,41 @@ table th {
   text-align: left;
 }
 
-ul.productos-js {
-  margin: 60px;
-}
-
 a.borrar-carrito:hover {
-  color: red;
+  color: #FF0000;
 }
 
 a.borrar-carrito:active {
   color: #940505;
+}
+
+hr.carrito-line-bottom {
+  width: 100%;
+  margin: 30px 0 0 0;
+}
+
+.footer-tabla-carrito {
+  height: 80px;
+  border: 1px solid black;
+}
+
+.footer-tabla-carrito p {
+  font-weight: 600;
+}
+
+.boton-carrito {
+  margin: 10px;
+  width: 140px;
+  height: 40px;
+  background-color: #5f6a7d;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.boton-carrito:hover {
+  background-color: #303030;
 }
 
 /* Seccion de Contacto */

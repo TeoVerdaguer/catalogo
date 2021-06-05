@@ -8,7 +8,7 @@
             "codigo": "fiat001",
             "descripcion": "Homocinetica Fiat Uno",
             "img": "img/products/homocinetica.jpg",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Termostato VW Amarok",
@@ -17,7 +17,7 @@
             "codigo": "volkswagen002",
             "descripcion": "Termostato VW Amarok",
             "img": "img/products/termostato-amarok.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Bomba de agua Fiat motor tipo",
@@ -26,7 +26,7 @@
             "codigo": "fiat002",
             "descripcion": "Bomba de agua Fiat motor tipo",
             "img": "img/products/bomba-agua-fiat.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Bobina Ford motor 16 valvulas",
@@ -35,7 +35,7 @@
             "codigo": "ford001",
             "descripcion": "Bobina Ford motor 16 valvulas",
             "img": "img/products/bobina-16v.jpg",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Contactor Fiat Uno/Duna",
@@ -44,7 +44,7 @@
             "codigo": "fiat001",
             "descripcion": "Contactor Fiat Uno/Duna",
             "img": "img/products/contactor-fiat.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Mangueras Renault 21",
@@ -53,7 +53,7 @@
             "codigo": "renault002",
             "descripcion": "Mangueras Renault 21",
             "img": "img/products/mangueras-renault21.jpg",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Palier Sprinter 415 Lado Acompañante Derecho",
@@ -62,7 +62,7 @@
             "codigo": "mercedes001",
             "descripcion": "Palier Sprinter 415 Lado Acompañante Derecho",
             "img": "img/products/palier-sprinter.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kit Distribucion Vw Amarok 2.0",
@@ -71,7 +71,7 @@
             "codigo": "volks003",
             "descripcion": "Kit Distribucion Vw Amarok 2.0 Original Ina Germany + Dolz",
             "img": "img/products/distribucion-amarok.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Tecla Comando Levanta Vidrios Vw Bora Golf Mk4 Passat",
@@ -80,7 +80,7 @@
             "codigo": "volks004",
             "descripcion": "Tecla Comando Levanta Vidrios Vw Bora Golf Mk4 Passat",
             "img": "img/products/tecla-vidrio-golf.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Carcasa Llave Peugeot 307 308",
@@ -89,7 +89,7 @@
             "codigo": "peu002",
             "descripcion": "Carcasa Llave Navaja Peugeot 2 Bot 307 308 C/portapila",
             "img": "img/products/llave-peugeot.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Carcasa Control Chevrolet Agile Astra Vectra Celta",
@@ -98,7 +98,7 @@
             "codigo": "chev002",
             "descripcion": "Carcasa Control Chevrolet Agile Astra Vectra Celta 2 botones",
             "img": "img/products/carcasa-chevrolet.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kit Cables Bosch + Bujias Bosch Vw Gol Trend / Suran / Fox",
@@ -107,7 +107,7 @@
             "codigo": "volks005",
             "descripcion": "Kit Cables Bosch + Bujias Bosch Vw Gol Trend / Suran / Fox",
             "img": "img/products/kit-encendido-vw.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Organizadora P/ Auto Porta Posavaso, Botella, Teléfonos",
@@ -116,7 +116,7 @@
             "codigo": "volks006",
             "descripcion": "Organizadora P/ Auto Porta Posavaso, Botella, Teléfonos",
             "img": "img/products/organizador-para-auto.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Juego X 4 Tazas Vw Gol / Gol Trend Rodado 14",
@@ -125,7 +125,7 @@
             "codigo": "volks007",
             "descripcion": "Juego X 4 Tazas Vw Gol / Gol Trend Rodado 14 Pulgadas Negra Con Logo",
             "img": "img/products/tazas-vw-gol.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "4 Tazas Rodado 14 Fiat Palio Siena Uno",
@@ -134,7 +134,7 @@
             "codigo": "fiat004",
             "descripcion": "4 Tazas Rodado 14 Fiat Palio Siena Uno Gris Plata Auto",
             "img": "img/products/tazas-fiat.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Llave Tecla Baliza Fiat Nueva Ducato Furgon",
@@ -143,7 +143,7 @@
             "codigo": "fiat005",
             "descripcion": "Llave Tecla Baliza Fiat Nueva Ducato Furgon 2010",
             "img": "img/products/llave-tecla-fiat.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Chapón Cubrecarter Peugeot 2008 / 208",
@@ -152,7 +152,7 @@
             "codigo": "peugeot006",
             "descripcion": "Chapón Cubrecarter Peugeot 2008 / 208",
             "img": "img/products/cubrecarter-peugeot-2008.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Caja De Agua Sin Termostato Peugeot 208 1.5 Nafta Original",
@@ -161,7 +161,7 @@
             "codigo": "peugeot007",
             "descripcion": "Caja De Agua Sin Termostato Peugeot 208 1.5 Nafta Original",
             "img": "img/products/caja-agua-peugeot.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Termostato De Agua De Peugeot 208",
@@ -170,7 +170,7 @@
             "codigo": "peugeot008",
             "descripcion": "Termostato De Agua De Peugeot 208 1.5 Nafta",
             "img": "img/products/termostato-peugeot-208.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kit Juego X 2 Junta Homocinetica Renault R9 R11",
@@ -179,7 +179,7 @@
             "codigo": "renault007",
             "descripcion": "Kit Juego X 2 Junta Homocinetica Renault R9 R11 Corven",
             "img": "img/products/homocinetica-renault-9.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Repuesto Buje Techo Renault Koleos Original",
@@ -188,7 +188,7 @@
             "codigo": "renault008",
             "descripcion": "Repuesto Buje Techo Renault Koleos Original",
             "img": "img/products/buje-techo-koleos.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Amortiguador Porton Baul Trasero Vw Suran",
@@ -197,7 +197,7 @@
             "codigo": "volkswagen008",
             "descripcion": "Amortiguador Porton Baul Trasero Vw Suran",
             "img": "img/products/amortiguador-porton-suran.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kt Tren Delantero Renault R12",
@@ -206,7 +206,7 @@
             "codigo": "renault008",
             "descripcion": "Kt Tren Delantero Renault R12 (repuestos Nacionales)",
             "img": "img/products/kit-delantero-r12.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kit De Distribución Ford Ranger 3.0 Mwm",
@@ -215,7 +215,7 @@
             "codigo": "ford008",
             "descripcion": "Kit De Distribución Ford Ranger 3.0 Mwm Brasil",
             "img": "img/products/distribucion-ranger.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kit Embrague Sachs Chevrolet Corsa Classic 1.4",
@@ -224,7 +224,7 @@
             "codigo": "chevrolet009",
             "descripcion": "Kit Embrague Sachs Chevrolet Corsa Classic 1.4 . Sachs Original",
             "img": "img/products/kit-embrague-corsa.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Llave De Luces Euroswitch Cromada Vw Bora Golf Mk4",
@@ -233,7 +233,7 @@
             "codigo": "volkswagen009",
             "descripcion": "Llave De Luces Euroswitch Cromada Vw Bora Golf Mk4 3bd941531",
             "img": "img/products/llave-luces-bora-golf-mk4.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Bobina Lapiz Renault K4m 1.6 16v Clio - Kangoo - Me",
@@ -242,7 +242,7 @@
             "codigo": "renault009",
             "descripcion": "Bobina Lapiz Renault K4m 1.6 16v Clio - Kangoo - Me",
             "img": "img/products/bobina-renault-k4m.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Kit Discos Y Pastillas P/ Volkswagen Fox Crossfox Suran",
@@ -251,7 +251,7 @@
             "codigo": "volkswagen010",
             "descripcion": "Kit Discos Y Pastillas P/ Volkswagen Fox Crossfox Suran",
             "img": "img/products/discos-fox-suran-crossfox.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Tecla Levantavidrios Peugeot 206 207",
@@ -260,7 +260,7 @@
             "codigo": "peugeot009",
             "descripcion": "Tecla Levantavidrios Peugeot 206 207 C/one Touch C/ Espejo",
             "img": "img/products/tecla-peugeot-206-207.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Valvula Reguladora De Presion Bosch Amarok",
@@ -269,7 +269,7 @@
             "codigo": "volkswagen011",
             "descripcion": "Valvula Reguladora De Presion Bosch Amarok 0281 006 074",
             "img": "img/products/valvula-presion-amarok.webp",
-            "stock": 1
+            "stock": 5
         },
         {
             "nombre": "Parasol Izquierdo Chevrolet Corsa/Classic",
@@ -278,7 +278,7 @@
             "codigo": "chevrolet008",
             "descripcion": "Parasol Izquierdo Chevrolet Corsa / Classic / Calidad Orig.",
             "img": "img/products/parasol-corsa-classic.webp",
-            "stock": 1
+            "stock": 5
         }
 
     ]

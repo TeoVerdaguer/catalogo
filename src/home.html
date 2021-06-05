@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Catalogo Repuestos</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -21,8 +22,6 @@
         <h4>Repuestos</h4>
       </div>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-
         <div class="dropdown">
           <button onclick="expandirCuenta()" class="dropbtn">Cuenta</button>
           <div id="myDropdown" class="dropdown-content">
@@ -55,7 +54,7 @@
         <!-- buscador -->
         <div class="search-box">
           <form action="" onsubmit="return false">
-            <input type="text" id="search-bar" placeholder="Buscar">
+            <input type="text" id="search-bar" placeholder="Buscar" autocomplete="off">
           </form>
         </div>
         <div class="filter-box">
@@ -77,10 +76,13 @@
       <div id="products"></div>
     </div>
 
+    <!-- Mensaje al agregar productos -->
+
     <div id="mensaje-carrito">
       <p id="mensaje"></p>
     </div>
 
+    <!-- Modulo carrito -->
     <div id="carrito-container">
       <div id="modulo-carrito">
 
