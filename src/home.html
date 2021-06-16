@@ -23,8 +23,8 @@
       </div>
       <ul class="nav-links">
         <div class="dropdown">
-          <button onclick="expandirCuenta()" class="dropbtn">Cuenta</button>
-          <div id="myDropdown" class="dropdown-content">
+          <button onclick="expandirCuenta()" id="btn-cuenta">Cuenta</button>
+          <div id="dropdown-cuenta" class="dropdown-cuenta">
             <a id="btn-cerrar-sesion" href="/src/index.html">Cerrar Sesion</a>
           </div>
         </div>
@@ -99,7 +99,9 @@
             <th>Precio</th>
           </tr>
         </table>
-
+        <div id="mensaje-pedido-enviado">
+          <h3>Pedido enviado. Le informaremos cuando este listo para retirar.</h3>
+        </div>
       </div>
     </div>
 

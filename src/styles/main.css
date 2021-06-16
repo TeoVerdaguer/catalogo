@@ -62,7 +62,7 @@ nav {
 }
 
 /* Dropdown Cuenta */
-.dropbtn {
+#btn-cuenta {
   background-color: #648fd9;
   color: white;
   border: none;
@@ -79,7 +79,7 @@ nav {
   display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-cuenta {
   display: none;
   position: absolute;
   background-color: #648fd9;
@@ -88,7 +88,7 @@ nav {
   top: 40px;
 }
 
-.dropdown-content a {
+.dropdown-cuenta a {
   color: #ffffff;
   padding: 12px;
   text-decoration: none;
@@ -220,7 +220,18 @@ p#numero {
 
 @media screen and (max-width: 768px) {
   .filters-container {
-    width: 40%;
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    margin-left: 10vw;
+  }
+  div#products {
+    width: 100vw;
+    justify-content: center;
+  }
+  #mensaje-carrito {
+    width: 90vw;
+    box-shadow: 7px 7px 10px #303030;
   }
 }
 
@@ -284,6 +295,7 @@ div.filter-box a:hover {
   margin: 80px 0;
   flex-wrap: wrap;
   min-height: 63vh;
+  justify-content: center;
 }
 
 .product {
@@ -312,6 +324,24 @@ img.product-img {
 
 .product-title {
   padding: 10px;
+}
+
+.logo-marca-container {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img.logo-img {
+  max-height: 30px;
+  max-width: 60px;
+}
+
+.precio-container {
+  display: flex;
+  align-items: flex-end;
 }
 
 .product-price {
@@ -430,8 +460,27 @@ hr.carrito-line-bottom {
   background-color: #303030;
 }
 
-/* Seccion de Contacto */
+input.input-cant-carrito {
+  height: 30px;
+  border: 1px solid #5f6a7d;
+  padding-left: 5px;
+  border-radius: 4px;
+}
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+  opacity: 1;
+  height: 30px;
+}
+
+#mensaje-pedido-enviado {
+  display: none;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 20px;
+}
+/* Seccion de Contacto */
 .footer {
   width: 100vw;
   height: auto;
@@ -495,6 +544,15 @@ hr.carrito-line-bottom {
 #map {
   display: flex;
   margin: 30px;
+}
+
+@media screen and (max-width: 1035px) {
+  #map {
+    display: none;
+  }
+  .social-container {
+    margin:0;
+  }
 }
 
 .leyenda {
