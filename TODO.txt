@@ -1,0 +1,12 @@
+TODO:
+
+	1- borrar productos del carrito
+	2- mostrar total del carrito al agregar y borrar
+	3- mostrar total del carrito al cambiar num desde el input
+4- boton de pagar y enviar pedido
+	5- modal de inicio de sesion
+6- carrito en el localStorage
+	7- sesion en el localStorage o cookies (?
+8- nombre cliente en mensaje bienvenida
+	9- texto del input de filtros toLowerCase
+	10- control stock de productos

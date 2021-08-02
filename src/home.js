@@ -112,6 +112,13 @@ $(function () {
   });
 });
 
+$.getJSON("data.json", function (data) {
+  $(() => {
+    data.productos.push({'nombre': 'prueba', 'apellido': 'dios quiera que funcione' });
+    console.log(data.productos);
+  })
+});
+
 // muestra un mensaje avisando que se agrego un producto al carrito
 function mostrarMensajeCarrito(producto) {
   document.getElementById("mensaje-carrito").classList.remove("sin-stock");

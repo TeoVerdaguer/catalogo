@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+    <!-- Imports -->
+    <link rel="stylesheet" href="styles/load-products.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Modal carga productos -->
+    <div class="banner">
+    </div>
+    <div class="load-container">
+      <div id="modal-load">
+        <h1>REPUESTOS</h1>
+        <p id="mensaje-load">
+          Ingrese los datos del producto a cargar
+        </p>
+
+        <div class="container-carga-productos">
+            <form id="input-form" enctype="multipart/form-data" action="/upload/image" method="post">
+
+                <div class="input-producto">
+                    <label for="pnombre">Nombre:</label>
+                    <input id="pnombre" class="input-prod" type="text" placeholder="nombre">
+                </div>
+                <div class="input-producto">
+                    <label for="pprecio">Precio:</label>
+                    <input id="pprecio" class="input-prod" type="text" placeholder="precio">
+                </div>
+                <div class="input-producto">
+                    <label for="pmarca">Marca:</label>
+                    <input id="pmarca" class="input-prod" type="text" placeholder="marca">
+                </div>
+                <div class="input-producto">
+                    <label for="pcodigo">Codigo:</label>
+                    <input id="pcodigo" class="input-prod" type="text" placeholder="codigo">
+                </div>
+                <div class="input-producto">
+                    <label for="pdescripcion">Descripcion:</label>
+                    <input id="pdescripcion" class="input-prod" type="text" placeholder="descripcion">
+                </div>
+                <div class="input-producto">
+                    <label for="pstock">Stock:</label>
+                    <input id="pstock" class="input-prod" type="text" placeholder="stock">
+                </div>
+                <div class="input-producto">
+                    <label for="image-file">Imagen:</label>
+                    <input id="image-file" type="file" />
+                </div>
+            </form>
+        </div>
+        
+        <button id="boton-submit" type="submit">Cargar</button>
+      </div>
+    </div>
+
+    <script src="load-products.js"></script>
+  </body>
+</html>

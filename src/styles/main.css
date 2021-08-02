@@ -148,6 +148,10 @@ nav {
     display: block;
     cursor: pointer;
   }
+
+  .social-container {
+    margin: 0;
+  }
 }
 
 .nav-active {
@@ -551,8 +555,15 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
   }
   .social-container {
-    margin:0;
+    margin:10px 0;
   }
+  .listing-container #products {
+    margin: 70px 0 0 0;
+  }
+  div.filters {
+    padding-bottom: 0;
+  }
+
 }
 
 .leyenda {
