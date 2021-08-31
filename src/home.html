@@ -15,6 +15,30 @@
     <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <!-- Importing Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBfHepKr6BF0--YlU_X52EllKHB7EY_4OM",
+        authDomain: "catalogo-ae413.firebaseapp.com",
+        projectId: "catalogo-ae413",
+        storageBucket: "catalogo-ae413.appspot.com",
+        messagingSenderId: "943144979567",
+        appId: "1:943144979567:web:4b32342d79d06e9f11d19a",
+        measurementId: "G-HHMH3YDE4R",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
 
     <!-- Seccion 1 - barra de navegacion -->
     <nav>

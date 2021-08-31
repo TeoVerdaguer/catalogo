@@ -1,0 +1,22 @@
+{
+  "name": "catalogo",
+  "version": "1.0.0",
+  "description": "catalogo repuestos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeoVerdaguer/catalogo.git"
+  },
+  "author": "Mateo Verdaguer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeoVerdaguer/catalogo/issues"
+  },
+  "homepage": "https://github.com/TeoVerdaguer/catalogo#readme",
+  "dependencies": {
+    "firebase": "^8.10.0"
+  }
+}
