@@ -7,6 +7,12 @@ let listaFiltradaProductos = ``;
 let numCliente = localStorage.getItem("numCliente");
 let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
+// Get databse from Firebase
+console.log(db);
+console.log(db.Reference);
+for (let i = 0; i < db.length; i++) {
+  console.log(db[i]);
+}
 
 class Producto {
   constructor(nombre, precio, marca, img, stock) {
@@ -110,13 +116,6 @@ $(function () {
   }).error(function () {
     console.log("error");
   });
-});
-
-$.getJSON("data.json", function (data) {
-  $(() => {
-    data.productos.push({'nombre': 'prueba', 'apellido': 'dios quiera que funcione' });
-    console.log(data.productos);
-  })
 });
 
 // muestra un mensaje avisando que se agrego un producto al carrito
