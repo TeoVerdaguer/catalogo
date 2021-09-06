@@ -1,8 +1,6 @@
-let productosAgregados = [];
+const db = firebase.firestore();
 
 $("#boton-submit").on("click", () => {
-  console.log("Producto cargado macho");
-
   let nombre = document.getElementById("pnombre");
   let precio = document.getElementById("pprecio");
   let marca = document.getElementById("pmarca");
@@ -11,33 +9,31 @@ $("#boton-submit").on("click", () => {
   let stock = document.getElementById("pstock");
   let img = document.getElementById("image-file");
 
-  productosAgregados.push({
-      "nombre": nombre.value,
-      "precio": precio.value,
-      "marca": marca.value,
-      "codigo": codigo.value,
-      "descripcion": descripcion.value,
-      "img": img.value,
-      "stock": stock.value
+  
+  function obtenerLinkImg(imagen) {
+    if (imagen) {
+        let startIndex = (imagen.indexOf('\\') >= 0 ? imagen.lastIndexOf('\\') : imagen.lastIndexOf('/'));
+        let filename = imagen.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+        }
+        return 'img/products/' + filename;
+    }
+  };
+
+  db.collection("productos").add({
+    "nombre": nombre.value,
+    "precio": precio.value,
+    "marca": marca.value,
+    "codigo": codigo.value,
+    "descripcion": descripcion.value,
+    "img": obtenerLinkImg(img.value),
+    "stock": stock.value
   });
-  console.log(productosAgregados);
 
   document.getElementById("input-form").reset();
 });
 
-
-// accede a la data del JSON y muestra los productos
-// $(function () {
-//     $.getJSON("data.json", function (data) {
-//       $(() => {
-//         data.productos.push(nuevoProducto);
-//         console.log(data);
-//       });
-//     })
-// });
-
-
-// fs.writeFile('myjsonfile.json', json, 'utf8', callback);
 
 
 

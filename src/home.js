@@ -7,12 +7,130 @@ let listaFiltradaProductos = ``;
 let numCliente = localStorage.getItem("numCliente");
 let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
-// Get databse from Firebase
-console.log(db);
-console.log(db.Reference);
-for (let i = 0; i < db.length; i++) {
-  console.log(db[i]);
-}
+const FIREBASE_DB = firebase.firestore();
+let productosDeFirebase = [];
+// let thingsRef;
+// let unsubscribe;
+
+// auth.onAuthStateChanged((user) => {
+//   if (user) {
+//     // Database Reference
+//     thingsRef = FIREBASE_DB.collection("productos");
+
+//     createThing.onclick = () => {
+//       thingsRef.add({
+//         uid: user.uid,
+//         nombre: prodAgregado.nombre,
+//         precio: prodAgregado.precio,
+//         stock: prodAgregado.stock
+//       });
+//     };
+
+//     // Query
+//     unsubscribe = thingsRef
+//       .where("uid", "==", user.uid)
+//       .orderBy("createdAt") // Requires a query
+//       .onSnapshot((querySnapshot) => {
+//         // Map results to an array of li elements
+
+//         const items = querySnapshot.docs.map((doc) => {
+//           return `<li>${doc.data().nombre}</li>`;
+//         });
+
+//         thingsList.innerHTML = items.join("");
+//       });
+//   } else {
+//     // Unsubscribe when the user signs out
+//     unsubscribe && unsubscribe();
+//   }
+// });
+
+// accede a la data del JSON y muestra los productos
+function getBaseDeDatosDeFirebase(baseDeDatos) {
+
+      for (let i = 0; i < baseDeDatos.length; i++) {
+        listadoProductos.push(
+          new Producto(
+            baseDeDatos[i].nombre,
+            baseDeDatos[i].precio,
+            baseDeDatos[i].marca,
+            baseDeDatos[i].img,
+            baseDeDatos[i].stock
+          )
+        );
+        listaProductos += `
+        <div class="product">
+          <img
+            class="product-img"
+            src="${baseDeDatos[i].img}"
+            alt="imagen-del-producto
+            loading="lazy"/>
+          <div class="product-info">
+            <h3 class="product-title">${baseDeDatos[i].nombre}</h3>
+          </div>
+          <div class="logo-marca-container">
+            <img src="img/logos/${baseDeDatos[i].marca}-logo.png" class="logo-img">
+            <div class="precio-container">
+              <h4 class="product-price">$${baseDeDatos[i].precio}</h4>
+              <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+            </div>
+          </div>
+        </div>`;
+        }
+    document.getElementById("products").innerHTML = listaProductos;
+  };
+
+
+
+  // $.getJSON("data.json", function (data) {
+  //   $(() => {
+  //     for (let i = 0; i < data.productos.length; i++) {
+  //       listadoProductos.push(
+  //         new Producto(
+  //           data.productos[i].nombre,
+  //           data.productos[i].precio,
+  //           data.productos[i].marca,
+  //           data.productos[i].img,
+  //           data.productos[i].stock
+  //         )
+  //       );
+  //       listaProductos += `
+  //       <div class="product">
+  //         <img
+  //           class="product-img"
+  //           src="${data.productos[i].img}"
+  //           alt="imagen-del-producto
+  //           loading="lazy"/>
+  //         <div class="product-info">
+  //           <h3 class="product-title">${data.productos[i].nombre}</h3>
+  //         </div>
+  //         <div class="logo-marca-container">
+  //           <img src="img/logos/${data.productos[i].marca}-logo.png" class="logo-img">
+  //           <div class="precio-container">
+  //             <h4 class="product-price">$${data.productos[i].precio}</h4>
+  //             <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+  //           </div>
+  //         </div>
+  //       </div>`;
+  //     }
+  //   });
+  //   document.getElementById("products").innerHTML = listaProductos;
+  // }).error(function () {
+  //   console.log("error");
+  // });
+// };
+
+
+// Access 'productos' from database
+FIREBASE_DB.collection("productos")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(doc.data());
+      productosDeFirebase.push(doc.data());
+    });
+    getBaseDeDatosDeFirebase(productosDeFirebase);
+  });
 
 class Producto {
   constructor(nombre, precio, marca, img, stock) {
@@ -78,45 +196,7 @@ function mostrarMensajeLogin() {
   ).innerHTML = `Bienvenido/a ${numCliente}!`;
 }
 
-// accede a la data del JSON y muestra los productos
-$(function () {
-  $.getJSON("data.json", function (data) {
-    $(() => {
-      for (let i = 0; i < data.productos.length; i++) {
-        listadoProductos.push(
-          new Producto(
-            data.productos[i].nombre,
-            data.productos[i].precio,
-            data.productos[i].marca,
-            data.productos[i].img,
-            data.productos[i].stock
-          )
-        );
-        listaProductos += `
-        <div class="product">
-          <img
-            class="product-img"
-            src="${data.productos[i].img}"
-            alt="imagen-del-producto
-            loading="lazy"/>
-          <div class="product-info">
-            <h3 class="product-title">${data.productos[i].nombre}</h3>
-          </div>
-          <div class="logo-marca-container">
-            <img src="img/logos/${data.productos[i].marca}-logo.png" class="logo-img">
-            <div class="precio-container">
-              <h4 class="product-price">$${data.productos[i].precio}</h4>
-              <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
-            </div>
-          </div>
-        </div>`;
-      }
-    });
-    document.getElementById("products").innerHTML = listaProductos;
-  }).error(function () {
-    console.log("error");
-  });
-});
+
 
 // muestra un mensaje avisando que se agrego un producto al carrito
 function mostrarMensajeCarrito(producto) {
