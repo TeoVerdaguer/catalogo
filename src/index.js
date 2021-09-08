@@ -5,7 +5,7 @@ function login() {
   let numeroClienteIngresado = document.getElementById("username-input").value;
 
   if (parseInt(numeroClienteIngresado) === NUM_ADMIN) {
-    location.href = "load-products.html";
+    location.href = "admin-panel.html";
   } else if (clientes.includes(parseInt(numeroClienteIngresado))) {
     localStorage.setItem("numCliente", numeroClienteIngresado);
     location.href = "home.html";
