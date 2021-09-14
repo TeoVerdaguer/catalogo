@@ -58,6 +58,7 @@ div.login-container {
   
   #username-input {
     height: 30px;
+    width: 210px;
     padding: 10px;
     margin: 10px;
     text-align: center;

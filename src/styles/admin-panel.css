@@ -15,7 +15,44 @@ body {
   overflow-x: hidden;
 }
 
-/*  Modal Carga Productos */
+/*  Modal Admin */
+div.banner {
+  width: 100vw;
+  height: 5vh;
+  margin: 10px;
+  display: flex;
+}
+
+#boton-volver {
+  height: 90%;
+  width: 5%;
+  background-color: #5f6a7d;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-start;
+}
+
+#boton-volver i {
+  color: #e7e7e7;
+}
+
+#boton-volver:hover {
+  background-color: #303030;
+}
+
+#boton-volver:active {
+  transform: translateY(4px);
+}
+
+
+div.container-titulo {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  height: 90%;
+}
 
 div.container {
   height: 100vh;
@@ -24,7 +61,6 @@ div.container {
   display: flex;
   position: fixed;
   z-index: 3;
-  align-items: center;
   justify-content: center;
 }
 
@@ -33,7 +69,7 @@ div.container {
   width: 90vw;
   border: 3px solid #e7e7e7;
   border-radius: 8px;
-  padding: 100px;
+  padding: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,13 +81,6 @@ div.container {
   padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  #modal-admin {
-    border: none;
-    padding: 10px;
-  }
-}
-
 div.boton-link {
     border: 3px solid white;
     border-radius: 4px;
@@ -59,7 +88,9 @@ div.boton-link {
     padding: 30px;
     width: 50vw;
     height: 50vh;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 div.boton-link:hover {
@@ -72,4 +103,19 @@ div.boton-link:active {
     background-color: #5f6a7d;
     cursor: pointer;
     box-shadow: 7px 7px 10px #303030;
+}
+
+@media screen and (max-width: 768px) {
+  #modal-admin {
+    border: none;
+    padding: 10px;
+  }
+  
+  div.boton-link {
+    width: 90vw;
+  }
+
+  #modal-admin h1 {
+    font-size: 30px;
+  }
 }

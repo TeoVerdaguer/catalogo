@@ -5,3 +5,7 @@ $('#btn-editar').on('click', () => {
 $('#btn-agregar').on('click', () => {
     location.href = 'load-products.html';
 });
+
+$('#boton-volver').on('click', () => {
+    location.href = 'index.html';
+});

@@ -7,14 +7,14 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Document</title>
     <!-- Imports -->
-    <link rel="stylesheet" href="styles/load-products.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="styles/edit-products.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Importing Firebase -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -40,14 +40,25 @@
     </script>
   </head>
   <body>
-    <!-- Modal carga productos -->
-    <div class="banner"></div>
+    <!-- Modal editar productos -->
+    <div class="banner">
+      <div id="boton-volver">
+        <i class="fas fa-chevron-left fa-lg"></i>
+      </div>
+      <div class="container-titulo">
+        <h1>REPUESTOS</h>
+    </div>
+    </div>
     <div class="load-container">
-      <div id="modal-load">
-        <h1>REPUESTOS</h1>
+      <div class="listing-container">
+        <!-- el contenido de este div se carga desde JS -->
+        <div id="products"></div>
+      </div>
+      <div id="mensaje-borrado">
+        <h2>producto borrado exitosamente</h2>
       </div>
     </div>
 
-    <script src="load-products.js"></script>
+    <script src="edit-products.js"></script>
   </body>
 </html>

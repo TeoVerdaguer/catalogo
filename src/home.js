@@ -9,41 +9,6 @@ let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
 const FIREBASE_DB = firebase.firestore();
 let productosDeFirebase = [];
-// let thingsRef;
-// let unsubscribe;
-
-// auth.onAuthStateChanged((user) => {
-//   if (user) {
-//     // Database Reference
-//     thingsRef = FIREBASE_DB.collection("productos");
-
-//     createThing.onclick = () => {
-//       thingsRef.add({
-//         uid: user.uid,
-//         nombre: prodAgregado.nombre,
-//         precio: prodAgregado.precio,
-//         stock: prodAgregado.stock
-//       });
-//     };
-
-//     // Query
-//     unsubscribe = thingsRef
-//       .where("uid", "==", user.uid)
-//       .orderBy("createdAt") // Requires a query
-//       .onSnapshot((querySnapshot) => {
-//         // Map results to an array of li elements
-
-//         const items = querySnapshot.docs.map((doc) => {
-//           return `<li>${doc.data().nombre}</li>`;
-//         });
-
-//         thingsList.innerHTML = items.join("");
-//       });
-//   } else {
-//     // Unsubscribe when the user signs out
-//     unsubscribe && unsubscribe();
-//   }
-// });
 
 // accede a la data del JSON y muestra los productos
 function getBaseDeDatosDeFirebase(baseDeDatos) {
@@ -367,7 +332,7 @@ function Cliente(numeroCliente, nombre) {
   this.nombre = nombre;
 }
 
-// genera el contenido de las cards de los productos
+// genera el contenido de las cards de los productos filtrados
 function generarCardsProductos(i) {
   listaFiltradaProductos += `
         <div class="product">

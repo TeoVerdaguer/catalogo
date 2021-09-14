@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
     <!-- Importing Firebase -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -39,6 +41,12 @@
   <body>
     <!-- Modal carga productos -->
     <div class="banner">
+      <div id="boton-volver">
+        <i class="fas fa-chevron-left fa-lg"></i>
+      </div>
+      <div class="container-titulo">
+        <h1>REPUESTOS</h>
+      </div>
     </div>
     <div class="load-container">
       <div id="modal-load">
@@ -82,6 +90,9 @@
         </div>
         
         <button id="boton-submit" type="submit">Cargar</button>
+        <div id="mensaje-cargado">
+          <h2>Producto cargado exitosamente</h2>
+        </div>
       </div>
     </div>
 
