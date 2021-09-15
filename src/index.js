@@ -5,10 +5,10 @@ function login() {
   let numeroClienteIngresado = document.getElementById("username-input").value;
 
   if (parseInt(numeroClienteIngresado) === NUM_ADMIN) {
-    location.href = "admin-panel.html";
+    location.href = "/src/admin-panel.html";
   } else if (clientes.includes(parseInt(numeroClienteIngresado))) {
     localStorage.setItem("numCliente", numeroClienteIngresado);
-    location.href = "home.html";
+    location.href = "/src/home.html";
     console.log("entraste");
   } else {
     document.getElementById("username-input").style.border =

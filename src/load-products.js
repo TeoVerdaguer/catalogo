@@ -45,5 +45,5 @@ function mostrarMensajeCargado(producto) {
 }
 
 $('#boton-volver').on('click', () => {
-  location.href = 'admin-panel.html';
+  location.href = '/src/admin-panel.html';
 });

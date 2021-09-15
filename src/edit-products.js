@@ -4,7 +4,7 @@ let listaProductos = ``;
 let listadoProductos = [];
 
 $("#boton-volver").on("click", () => {
-  location.href = "admin-panel.html";
+  location.href = "/src/admin-panel.html";
 });
 
 // accede a la data del JSON y muestra los productos
