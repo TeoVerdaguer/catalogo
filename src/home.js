@@ -94,6 +94,7 @@ FIREBASE_DB.collection("productos")
       console.log(doc.data());
       productosDeFirebase.push(doc.data());
     });
+    $("#cargando").hide();
     getBaseDeDatosDeFirebase(productosDeFirebase);
   });
 

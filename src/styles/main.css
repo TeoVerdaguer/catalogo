@@ -572,3 +572,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 10px;
   color: #bdbdbd;
 }
+
+#cargando {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  color: #ffffff;
+}
