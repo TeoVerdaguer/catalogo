@@ -70,7 +70,9 @@
 
     <!-- Seccion 2 - filtros -->
     <aside class="filters-container">
-      <h3 id="welcome-message"></h3>
+      <div class="welcome-container">
+        <h3 id="welcome-message"></h3>
+      </div>
       <hr class="aside-divider" size="4" color="#FFFFFF">
       <div class="filters">
         <h1>Filtros</h1>
@@ -111,19 +113,22 @@
     <div id="carrito-container">
       <div id="modulo-carrito">
 
+        <!-- <i id="close-carrito" class="fa fa-times fa-2x" aria-hidden="true"></i> -->
         <div class="titulo">
           <h1>Carrito de compras</h1>
-          <hr size="2" color="#648FD9">
+          <i id="close-carrito" class="fa fa-times fa-2x" aria-hidden="true"></i>
         </div>
+        <hr size="2" color="#648FD9">
 
         <table id="produ">
           <tr>
-            <th></th>
+            <th class="table-img-title"></th>
             <th>Descripcion</th>
             <th>Cantidad</th>
-            <th>Precio</th>
+            <th class="table-price-title">Precio</th>
           </tr>
         </table>
+        <button id="boton-enviar-pedido" class="boton-carrito">Enviar Pedido</button>
         <div id="mensaje-pedido-enviado">
           <h3>Pedido enviado. Le informaremos cuando este listo para retirar.</h3>
         </div>

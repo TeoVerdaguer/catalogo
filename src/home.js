@@ -221,7 +221,8 @@ function cerrarCarrito() {
     window.onclick = function (event) {
       if (
         event.target.id === "carrito-container" &&
-        event.target.id != "modulo-carrito"
+        event.target.id != "modulo-carrito" ||
+        event.target.id === "close-carrito"
       ) {
         document.getElementById("produ").innerHTML = `
       <tr>
@@ -245,7 +246,7 @@ function cargarCarrito() {
     if (element.cantidad > 0) {
       tablaProdu += `
       <tr>
-        <td><img class="img-prod-carrito" src="${element.img}"></td>    
+        <td class="table-img"><img class="img-prod-carrito" src="${element.img}"></td>    
         <td class="nombre-prod-carrito">${element.nombre}</td>
         <td><input class="input-cant-carrito" type="number" min="1" max="${
           element.stock
@@ -261,16 +262,18 @@ function cargarCarrito() {
   tablaProdu += `
   <tfoot class="footer-tabla-carrito">
     <tr>
-      <td></td>
+      <td class="table-total"></td>
       <td><p class="precio-total">TOTAL: $${totalCarrito}</p></td>
       <td></td>
-      <td><button class="boton-carrito">Enviar Pedido</button></td>
+      <td class="table-boton"></td>
     </tr>
   </tfoot>
   `;
   document.getElementById("produ").innerHTML = tablaProdu;
   document.querySelector(".boton-carrito").addEventListener("click", () => {
     document.getElementById("mensaje-pedido-enviado").style.display = "flex";
+    document.getElementById("boton-enviar-pedido").disabled = "true";
+    console.log('apretaste');
   });
   manejarEventosCarrito();
 }

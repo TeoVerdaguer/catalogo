@@ -61,6 +61,13 @@ nav {
   font-size: 20px;
 }
 
+#cargando {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  color: #ffffff;
+}
+
 /* Dropdown Cuenta */
 #btn-cuenta {
   background-color: #648fd9;
@@ -220,23 +227,6 @@ p#numero {
   margin: 80px 0;
   padding-top: 30px;
   flex-direction: column;
-}
-
-@media screen and (max-width: 768px) {
-  .filters-container {
-    display: flex;
-    justify-content: center;
-    width: 90vw;
-    margin-left: 10vw;
-  }
-  div#products {
-    width: 100vw;
-    justify-content: center;
-  }
-  #mensaje-carrito {
-    width: 90vw;
-    box-shadow: 7px 7px 10px #303030;
-  }
 }
 
 .filters-container #welcome-message {
@@ -415,8 +405,26 @@ img.img-prod-carrito {
 }
 
 div.titulo {
-  margin: 30px;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  max-height: fit-content;
+}
+
+div.titulo h1 {
   color: #648fd9;
+}
+
+i#close-carrito {
+  color: #303030;
+}
+
+i#close-carrito:hover {
+  color: #FF0000;
+}
+
+i#close-carrito:active {
+  color: #940505;
 }
 
 div#modulo-carrito table {
@@ -462,6 +470,10 @@ hr.carrito-line-bottom {
 
 .boton-carrito:hover {
   background-color: #303030;
+}
+
+.boton-carrito:disabled {
+  background-color: #5f6a7d44;
 }
 
 input.input-cant-carrito {
@@ -573,9 +585,44 @@ input[type=number]::-webkit-outer-spin-button {
   color: #bdbdbd;
 }
 
-#cargando {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  color: #ffffff;
+@media screen and (max-width: 768px) {
+  .filters-container {
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    margin: 50px 0 0 10vw;
+  }
+  div#products {
+    width: 100vw;
+    justify-content: center;
+  }
+  div#mensaje-carrito {
+    width: 80vw;
+    top: 10%;
+    left: 10%;
+    /* box-shadow: 7px 7px 10px #303030; */
+  }
+  #cargando {
+    left: 45%;
+    top: 70%;
+  }
+  div.filters h1 {
+    font-size: 20px;
+  }
+  .welcome-container, .aside-divider {
+    display: none;
+  }
+  div#modulo-carrito {
+    height: 95vh;
+    width: 95vw;
+  }
+  div#modulo-carrito table {
+    margin: 20px 10px;
+  }
+  th.table-img-title, td.table-img, td.table-total, td.table-boton {
+    display: none;
+  }
+  i#close-carrito {
+    margin: 10px 0 0 85vw;
+  }
 }

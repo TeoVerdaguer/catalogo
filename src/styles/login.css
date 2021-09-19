@@ -84,3 +84,12 @@ div.login-container {
     background-color: #303030;
   }
   
+  @media screen and (max-width: 1035px) {
+    #modal-login {
+      border: none;
+      padding: 0;
+    }
+    #mensaje-login {
+      display: none;
+    }
+  }
