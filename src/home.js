@@ -225,12 +225,12 @@ function cerrarCarrito() {
         event.target.id === "close-carrito"
       ) {
         document.getElementById("produ").innerHTML = `
-      <tr>
+      <tr class="table-titles">
         <th></th>
         <th>Descripcion</th>
         <th>Cantidad</th>
         <th>Precio</th>
-        <th>Eliminar</th>
+        <th class="table-eliminar">Eliminar</th>
       </tr>`;
         tablaProdu = document.getElementById("produ").innerHTML;
         $("#carrito-container").hide();
