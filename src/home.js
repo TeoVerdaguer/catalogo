@@ -218,11 +218,13 @@ function abrirCarrito() {
 // oculta el modal del carrito al hacer click fuera del mismo
 function cerrarCarrito() {
   if (document.getElementById("carrito-container").style.display === "flex") {
+    document.getElementById("close-carrito").addEventListener('click', () => {
+      $("#carrito-container").hide();
+    });
     window.onclick = function (event) {
       if (
         event.target.id === "carrito-container" &&
-        event.target.id != "modulo-carrito" ||
-        event.target.id === "close-carrito"
+        event.target.id != "modulo-carrito"
       ) {
         document.getElementById("produ").innerHTML = `
       <tr class="table-titles">
@@ -230,7 +232,7 @@ function cerrarCarrito() {
         <th>Descripcion</th>
         <th>Cantidad</th>
         <th>Precio</th>
-        <th class="table-eliminar">Eliminar</th>
+        <th>Eliminar</th>
       </tr>`;
         tablaProdu = document.getElementById("produ").innerHTML;
         $("#carrito-container").hide();

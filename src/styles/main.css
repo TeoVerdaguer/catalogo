@@ -619,14 +619,11 @@ input[type=number]::-webkit-outer-spin-button {
   div#modulo-carrito table {
     margin: 20px 10px;
   }
-  th.table-img-title, td.table-img, td.table-total, td.table-boton {
+  td.table-img, td.table-total, td.table-boton {
     display: none;
   }
   div.titulo h1 {
     font-size: 24px;
-  }
-  th.table-eliminar {
-    display: none;
   }
   tr.table-titles {
     display: none;
