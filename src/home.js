@@ -218,9 +218,6 @@ function abrirCarrito() {
 // oculta el modal del carrito al hacer click fuera del mismo
 function cerrarCarrito() {
   if (document.getElementById("carrito-container").style.display === "flex") {
-    document.getElementById("close-carrito").addEventListener('click', () => {
-      $("#carrito-container").hide();
-    });
     window.onclick = function (event) {
       if (
         event.target.id === "carrito-container" &&
@@ -237,6 +234,9 @@ function cerrarCarrito() {
         tablaProdu = document.getElementById("produ").innerHTML;
         $("#carrito-container").hide();
       }
+      document.getElementById("close-carrito").addEventListener('click', () => {
+        $("#carrito-container").hide();
+      });
     };
     totalCarrito = 0;
   }
