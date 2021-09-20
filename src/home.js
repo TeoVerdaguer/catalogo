@@ -12,18 +12,17 @@ let productosDeFirebase = [];
 
 // accede a la data del JSON y muestra los productos
 function getBaseDeDatosDeFirebase(baseDeDatos) {
-
-      for (let i = 0; i < baseDeDatos.length; i++) {
-        listadoProductos.push(
-          new Producto(
-            baseDeDatos[i].nombre,
-            baseDeDatos[i].precio,
-            baseDeDatos[i].marca,
-            baseDeDatos[i].img,
-            baseDeDatos[i].stock
-          )
-        );
-        listaProductos += `
+  for (let i = 0; i < baseDeDatos.length; i++) {
+    listadoProductos.push(
+      new Producto(
+        baseDeDatos[i].nombre,
+        baseDeDatos[i].precio,
+        baseDeDatos[i].marca,
+        baseDeDatos[i].img,
+        baseDeDatos[i].stock
+      )
+    );
+    listaProductos += `
         <div class="product">
           <img
             class="product-img"
@@ -41,50 +40,47 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
             </div>
           </div>
         </div>`;
-        }
-    document.getElementById("products").innerHTML = listaProductos;
-  };
+  }
+  document.getElementById("products").innerHTML = listaProductos;
+}
 
-
-
-  // $.getJSON("data.json", function (data) {
-  //   $(() => {
-  //     for (let i = 0; i < data.productos.length; i++) {
-  //       listadoProductos.push(
-  //         new Producto(
-  //           data.productos[i].nombre,
-  //           data.productos[i].precio,
-  //           data.productos[i].marca,
-  //           data.productos[i].img,
-  //           data.productos[i].stock
-  //         )
-  //       );
-  //       listaProductos += `
-  //       <div class="product">
-  //         <img
-  //           class="product-img"
-  //           src="${data.productos[i].img}"
-  //           alt="imagen-del-producto
-  //           loading="lazy"/>
-  //         <div class="product-info">
-  //           <h3 class="product-title">${data.productos[i].nombre}</h3>
-  //         </div>
-  //         <div class="logo-marca-container">
-  //           <img src="img/logos/${data.productos[i].marca}-logo.png" class="logo-img">
-  //           <div class="precio-container">
-  //             <h4 class="product-price">$${data.productos[i].precio}</h4>
-  //             <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
-  //           </div>
-  //         </div>
-  //       </div>`;
-  //     }
-  //   });
-  //   document.getElementById("products").innerHTML = listaProductos;
-  // }).error(function () {
-  //   console.log("error");
-  // });
+// $.getJSON("data.json", function (data) {
+//   $(() => {
+//     for (let i = 0; i < data.productos.length; i++) {
+//       listadoProductos.push(
+//         new Producto(
+//           data.productos[i].nombre,
+//           data.productos[i].precio,
+//           data.productos[i].marca,
+//           data.productos[i].img,
+//           data.productos[i].stock
+//         )
+//       );
+//       listaProductos += `
+//       <div class="product">
+//         <img
+//           class="product-img"
+//           src="${data.productos[i].img}"
+//           alt="imagen-del-producto
+//           loading="lazy"/>
+//         <div class="product-info">
+//           <h3 class="product-title">${data.productos[i].nombre}</h3>
+//         </div>
+//         <div class="logo-marca-container">
+//           <img src="img/logos/${data.productos[i].marca}-logo.png" class="logo-img">
+//           <div class="precio-container">
+//             <h4 class="product-price">$${data.productos[i].precio}</h4>
+//             <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
+//           </div>
+//         </div>
+//       </div>`;
+//     }
+//   });
+//   document.getElementById("products").innerHTML = listaProductos;
+// }).error(function () {
+//   console.log("error");
+// });
 // };
-
 
 // Access 'productos' from database
 FIREBASE_DB.collection("productos")
@@ -162,8 +158,6 @@ function mostrarMensajeLogin() {
   ).innerHTML = `Bienvenido/a ${numCliente}!`;
 }
 
-
-
 // muestra un mensaje avisando que se agrego un producto al carrito
 function mostrarMensajeCarrito(producto) {
   document.getElementById("mensaje-carrito").classList.remove("sin-stock");
@@ -233,14 +227,24 @@ function cerrarCarrito() {
       </tr>`;
         tablaProdu = document.getElementById("produ").innerHTML;
         $("#carrito-container").hide();
-        // Event listener to fix close button not working in safari mobile
-        document.getElementById("close-carrito").addEventListener('click', () => {
-          $("#carrito-container").hide();
-        });
       }
     };
     totalCarrito = 0;
   }
+  // Event listener to fix close button not working in safari mobile
+  document.getElementById("close-carrito").addEventListener("click", () => {
+    $("#carrito-container").hide();
+    document.getElementById("produ").innerHTML = `
+      <tr class="table-titles">
+        <th></th>
+        <th>Descripcion</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Eliminar</th>
+      </tr>`;
+    tablaProdu = document.getElementById("produ").innerHTML;
+    $("#carrito-container").hide();
+  });
 }
 
 // genera el contenido del modal del carrito
@@ -249,7 +253,9 @@ function cargarCarrito() {
     if (element.cantidad > 0) {
       tablaProdu += `
       <tr>
-        <td class="table-img"><img class="img-prod-carrito" src="${element.img}"></td>    
+        <td class="table-img"><img class="img-prod-carrito" src="${
+          element.img
+        }"></td>    
         <td class="nombre-prod-carrito">${element.nombre}</td>
         <td><input class="input-cant-carrito" type="number" min="1" max="${
           element.stock
@@ -276,7 +282,7 @@ function cargarCarrito() {
   document.querySelector(".boton-carrito").addEventListener("click", () => {
     document.getElementById("mensaje-pedido-enviado").style.display = "flex";
     document.getElementById("boton-enviar-pedido").disabled = "true";
-    console.log('apretaste');
+    console.log("apretaste");
   });
   manejarEventosCarrito();
 }
