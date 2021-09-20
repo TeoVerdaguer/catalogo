@@ -628,4 +628,10 @@ input[type=number]::-webkit-outer-spin-button {
   tr.table-titles {
     display: none;
   }
+  .listing-container #products {
+    padding: 20px 0;
+  }
+  .product {
+    width: 85%;
+  }
 }
