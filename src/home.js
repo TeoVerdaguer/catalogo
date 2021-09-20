@@ -233,10 +233,11 @@ function cerrarCarrito() {
       </tr>`;
         tablaProdu = document.getElementById("produ").innerHTML;
         $("#carrito-container").hide();
+        // Event listener to fix close button not working in safari mobile
+        document.getElementById("close-carrito").addEventListener('click', () => {
+          $("#carrito-container").hide();
+        });
       }
-      document.getElementById("close-carrito").addEventListener('click', () => {
-        $("#carrito-container").hide();
-      });
     };
     totalCarrito = 0;
   }
