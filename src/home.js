@@ -7,8 +7,10 @@ let listaFiltradaProductos = ``;
 let numCliente = localStorage.getItem("numCliente");
 let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
-const FIREBASE_DB = firebase.firestore();
 let productosDeFirebase = [];
+const FIREBASE_DB = firebase.firestore();
+const EMAIL_USUARIO = "verdaguermateo@gmail.com";
+const MI_EMAIL = "repuestos.pedidos2021@gmail.com";
 
 // accede a la data del JSON y muestra los productos
 function getBaseDeDatosDeFirebase(baseDeDatos) {
@@ -43,44 +45,6 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
   }
   document.getElementById("products").innerHTML = listaProductos;
 }
-
-// $.getJSON("data.json", function (data) {
-//   $(() => {
-//     for (let i = 0; i < data.productos.length; i++) {
-//       listadoProductos.push(
-//         new Producto(
-//           data.productos[i].nombre,
-//           data.productos[i].precio,
-//           data.productos[i].marca,
-//           data.productos[i].img,
-//           data.productos[i].stock
-//         )
-//       );
-//       listaProductos += `
-//       <div class="product">
-//         <img
-//           class="product-img"
-//           src="${data.productos[i].img}"
-//           alt="imagen-del-producto
-//           loading="lazy"/>
-//         <div class="product-info">
-//           <h3 class="product-title">${data.productos[i].nombre}</h3>
-//         </div>
-//         <div class="logo-marca-container">
-//           <img src="img/logos/${data.productos[i].marca}-logo.png" class="logo-img">
-//           <div class="precio-container">
-//             <h4 class="product-price">$${data.productos[i].precio}</h4>
-//             <a id="add-cart" onclick="listadoProductos[${i}].agregarAlCarrito()"><i class="add-cart-icon fas fa-plus-square fa-lg"></i></a>
-//           </div>
-//         </div>
-//       </div>`;
-//     }
-//   });
-//   document.getElementById("products").innerHTML = listaProductos;
-// }).error(function () {
-//   console.log("error");
-// });
-// };
 
 // Access 'productos' from database
 FIREBASE_DB.collection("productos")
@@ -282,7 +246,7 @@ function cargarCarrito() {
   document.querySelector(".boton-carrito").addEventListener("click", () => {
     document.getElementById("mensaje-pedido-enviado").style.display = "flex";
     document.getElementById("boton-enviar-pedido").disabled = "true";
-    console.log("apretaste");
+    enviarEmailPedido(tablaProdu);
   });
   manejarEventosCarrito();
 }
@@ -345,7 +309,34 @@ function Cliente(numeroCliente, nombre) {
   this.nombre = nombre;
 }
 
-// genera el contenido de las cards de los productos filtrados
+// Envia email con el pedido
+function enviarEmailPedido(listado) {
+  let tabla = `
+  <html>
+  <head>
+  <style type="text/css">
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 0 10px;
+  }
+  </style>
+  </head>
+  <body>
+  <table>`;
+
+  Email.send({
+    SecureToken: "0818034a-4302-4a54-8030-80e3807ad74f",
+    To: EMAIL_USUARIO,
+    From: MI_EMAIL,
+    Subject: "Pedido Repuestos",
+    Body: tabla + listado + `</table></body></html>`
+  }).then((message) => console.log(message));
+}
+
+// Genera el contenido de las cards de los productos filtrados
 function generarCardsProductos(i) {
   listaFiltradaProductos += `
         <div class="product">

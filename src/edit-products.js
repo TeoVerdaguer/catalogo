@@ -20,6 +20,7 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
         [i]
       )
     );
+    console.log(baseDeDatos[i].precio);
     listaProductos += `
       <div class="product">
         <img
@@ -29,15 +30,16 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
           loading="lazy"/>
         <div class="product-info">
           <h3 class="product-title">${baseDeDatos[i].nombre}</h3>
+          <div class="precio-container">
+          Precio: <input type="number" class="product-price" value=${baseDeDatos[i].precio}></input>
+        </div>
+        <div>
+          Stock: <input type="number" class="product-stock" value=${baseDeDatos[i].stock}></input>
+        </div>
         </div>
         <div class="logo-marca-container">
           <img src="img/logos/${baseDeDatos[i].marca}-logo.png" class="logo-img">
-          <div class="precio-container">
-            <h4 class="product-price">$${baseDeDatos[i].precio}</h4>
-          </div>
-          <div>
-            <h4 class="product-stock">Stock: ${baseDeDatos[i].stock}</h4>
-          </div>
+          <button class="boton-guardar" onclick="listadoProductos[${i}].actualizar(this)">Guardar</button>
           <a id="delete-item" onclick="listadoProductos[${i}].borrar(this)"><i class="delete-item-icon fas fa-trash fa-lg"></i></a>
         </div>
       </div>`;

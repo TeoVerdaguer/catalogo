@@ -362,7 +362,13 @@ img.product-img {
 .product-info {
   display: flex;
   flex: 1;
-  align-items: flex-end;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.product-info input {
+  margin: 5px;
 }
 
 .product-title {
@@ -375,6 +381,7 @@ img.product-img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
 img.logo-img {
@@ -390,6 +397,24 @@ img.logo-img {
 .product-price, .product-stock {
   padding-top: 10px;
 }
+
+button.boton-guardar {
+  width: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 35px;
+  text-align:center;
+  border: none;
+  border-radius: 50px;
+  background-color: #648fd9;
+}
+
+button.boton-guardar:hover {
+  background-color: #5f6a7d;
+} 
 
 i.delete-item-icon {
   padding: 5px;
