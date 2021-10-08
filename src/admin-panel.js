@@ -7,5 +7,9 @@ $('#btn-agregar').on('click', () => {
 });
 
 $('#boton-volver').on('click', () => {
+    firebase.auth().signOut()
+    .then( () => {
+        console.log('signed out successfuly.');
+    });
     location.href = '../index.html';
 });

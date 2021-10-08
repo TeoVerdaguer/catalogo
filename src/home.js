@@ -303,12 +303,6 @@ function actualizarTotal() {
   document.querySelector("p.precio-total").textContent = `TOTAL: $${total}`;
 }
 
-// Funcion constructora de objetos Cliente
-function Cliente(numeroCliente, nombre) {
-  this.numeroCliente = numeroCliente;
-  this.nombre = nombre;
-}
-
 // Envia email con el pedido
 function enviarEmailPedido(listado) {
   let tabla = `
