@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TeoVerdaguer/catalogo#readme",
   "dependencies": {
+    "ansi-regex": "^5.0.1",
     "firebase": "^8.10.0"
   }
 }
