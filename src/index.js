@@ -5,7 +5,16 @@ function login() {
   let numeroClienteIngresado = document.getElementById("username-input").value;
 
   if (parseInt(numeroClienteIngresado) === NUM_ADMIN) {
-    location.href = "/src/admin-panel.html";
+    // firebase login with google to enable write permission
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log(result);
+      location.href = "/src/admin-panel.html";
+    })
+    .catch(err => {
+      console.log(err);
+    });
   } else if (clientes.includes(parseInt(numeroClienteIngresado))) {
     localStorage.setItem("numCliente", numeroClienteIngresado);
     location.href = "/src/home.html";
