@@ -2,15 +2,17 @@ let totalCarrito = 0;
 let listaClientes = [];
 let listaProductos = ``;
 let listadoProductos = [];
-let clientes = [123, 456, 789];
 let listaFiltradaProductos = ``;
 let numCliente = localStorage.getItem("numCliente");
+let nombreCliente = localStorage.getItem("nombreCliente");
 let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
 let productosDeFirebase = [];
 const FIREBASE_DB = firebase.firestore();
 const EMAIL_USUARIO = "verdaguermateo@gmail.com";
 const MI_EMAIL = "repuestos.pedidos2021@gmail.com";
+let arrayCarrito = [];
+
 
 // accede a la data del JSON y muestra los productos
 function getBaseDeDatosDeFirebase(baseDeDatos) {
@@ -51,7 +53,7 @@ FIREBASE_DB.collection("productos")
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      console.log(doc.data());
+      // console.log(doc.data());
       productosDeFirebase.push(doc.data());
     });
     $("#cargando").hide();
@@ -67,17 +69,38 @@ class Producto {
     this.stock = stock;
     this.cantidad = 0;
     this.agregarAlCarrito = () => {
-      if (this.cantidad === 0 && this.stock > 0) {
+
+      if (arrayCarrito.length === 0) {
         this.cantidad += 1;
+        arrayCarrito.push(this);
+      }
+      else {
+        if (arrayCarrito.includes(this)) {
+          for (let i = 0; i < arrayCarrito.length; i++) {
+            if (arrayCarrito[i].nombre === this.nombre) {
+              arrayCarrito[i].cantidad += 1;
+            }
+          }
+        }
+        else {
+          this.cantidad += 1;
+          arrayCarrito.push(this);
+        }
+      };
+
+      if (this.cantidad === 0 && this.stock > 0) {
         mostrarMensajeCarrito(this);
       } else if (this.cantidad < this.stock) {
-        this.cantidad += 1;
         mostrarMensajeCarrito(this);
       } else {
         mostrarMensajeSinStock();
-      }
+      };
       mostrarCantCarrito();
       actualizarCantCarrito();
+
+      arrayCarrito.forEach(element => {
+        console.log(element.nombre + " - " + element.cantidad);
+      });
     };
   }
 }
@@ -119,7 +142,7 @@ document.getElementById("btn-cuenta").onclick = () => {
 function mostrarMensajeLogin() {
   document.getElementById(
     "welcome-message"
-  ).innerHTML = `Bienvenido/a ${numCliente}!`;
+  ).innerHTML = `Bienvenido/a ${nombreCliente}!`;
 }
 
 // muestra un mensaje avisando que se agrego un producto al carrito
@@ -157,7 +180,7 @@ function ocultarCantCarrito() {
 // actualiza el numero del carrito con la cantidad de productos agregados
 function actualizarCantCarrito() {
   let cantCarrito = 0;
-  listadoProductos.forEach((elem) => {
+  arrayCarrito.forEach((elem) => {
     cantCarrito += elem.cantidad;
   });
   if (cantCarrito === 0) {
@@ -213,9 +236,8 @@ function cerrarCarrito() {
 
 // genera el contenido del modal del carrito
 function cargarCarrito() {
-  listadoProductos.forEach((element) => {
-    if (element.cantidad > 0) {
-      tablaProdu += `
+  arrayCarrito.forEach( (element) => {
+    tablaProdu += `
       <tr>
         <td class="table-img"><img class="img-prod-carrito" src="${
           element.img
@@ -229,7 +251,6 @@ function cargarCarrito() {
       </tr>
       `;
       totalCarrito += element.precio * element.cantidad;
-    }
   });
 
   tablaProdu += `
@@ -244,9 +265,8 @@ function cargarCarrito() {
   `;
   document.getElementById("produ").innerHTML = tablaProdu;
   document.querySelector(".boton-carrito").addEventListener("click", () => {
-    document.getElementById("mensaje-pedido-enviado").style.display = "flex";
+    enviarEmailPedido();
     document.getElementById("boton-enviar-pedido").disabled = "true";
-    enviarEmailPedido(tablaProdu);
   });
   manejarEventosCarrito();
 }
@@ -260,7 +280,7 @@ function manejarEventosCarrito() {
       let nombreElemento = e.target.parentElement.parentElement.querySelector(
         "td.nombre-prod-carrito"
       ).textContent;
-      listadoProductos.forEach((element) => {
+      arrayCarrito.forEach((element) => {
         if (element.nombre === nombreElemento) {
           element.cantidad = Number(
             e.target.parentElement.parentElement.querySelector(
@@ -274,6 +294,7 @@ function manejarEventosCarrito() {
         }
       });
       actualizarCantCarrito();
+
     });
   }
   $(".borrar-carrito").on("click", (event) => {
@@ -283,12 +304,12 @@ function manejarEventosCarrito() {
       "td.nombre-prod-carrito"
     ).textContent;
 
-    listadoProductos.forEach((element) => {
-      if (element.nombre === nombreElemento) {
-        element.cantidad = 0;
+    for (let i = 0; i < arrayCarrito.length; i++) {
+      if (arrayCarrito[i].nombre === nombreElemento) {
+        arrayCarrito.splice(i, 1);
         actualizarTotal();
-      }
-    });
+      } 
+    }
     actualizarCantCarrito();
   });
 }
@@ -305,30 +326,64 @@ function actualizarTotal() {
 
 // Envia email con el pedido
 function enviarEmailPedido(listado) {
+  let precioTotal = 0;
   let tabla = `
-  <html>
-  <head>
-  <style type="text/css">
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 0 10px;
-  }
-  </style>
-  </head>
-  <body>
-  <table>`;
+    <html>
+    <head>
+    <style type="text/css">
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0 10px;
+    }
+    </style>
+    </head>
+    <body>
+    <table>
+    <tr>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>`;
+
+   for (let i = 0; i < arrayCarrito.length; i++) {
+    tabla += 
+      `<tr>
+      <td>${arrayCarrito[i].nombre}</td>
+      <td>${arrayCarrito[i].cantidad}</td>
+      <td>${arrayCarrito[i].precio * arrayCarrito[i].cantidad}</td>
+      </tr>`;
+    precioTotal += arrayCarrito[i].precio * arrayCarrito[i].cantidad;
+   }
+
+   tabla +=
+   `<tfoot>
+      <tr>
+        <td><p>TOTAL: $${Number(precioTotal)}</p></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tfoot>
+    </table>
+    </body>
+    </html>`;
 
   Email.send({
     SecureToken: "0818034a-4302-4a54-8030-80e3807ad74f",
     To: EMAIL_USUARIO,
     From: MI_EMAIL,
     Subject: "Pedido Repuestos",
-    Body: tabla + listado + `</table></body></html>`
-  }).then((message) => console.log(message));
+    Body: tabla
+  }).then((message) => mostrarMensajePedidoEnviado(message));
 }
+
+// Muestra un mensaje informando que el pedido fue enviado y loggea el mensaje de SMTPjs en la consola
+function mostrarMensajePedidoEnviado(msg) {
+  document.getElementById("mensaje-pedido-enviado").style.display = "flex";
+  console.log(msg);
+};
 
 // Genera el contenido de las cards de los productos filtrados
 function generarCardsProductos(i) {
