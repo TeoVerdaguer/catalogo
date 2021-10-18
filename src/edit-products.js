@@ -31,10 +31,10 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
         <div class="product-info">
           <h3 class="product-title">${baseDeDatos[i].nombre}</h3>
           <div class="precio-container">
-          Precio: <input type="number" class="product-price" value=${baseDeDatos[i].precio}></input>
+          Precio: <input type="number" id="precio" class="product-price" value=${baseDeDatos[i].precio}></input>
         </div>
         <div>
-          Stock: <input type="number" class="product-stock" value=${baseDeDatos[i].stock}></input>
+          Stock: <input type="number" id="stock" class="product-stock" value=${baseDeDatos[i].stock}></input>
         </div>
         </div>
         <div class="logo-marca-container">
@@ -48,13 +48,18 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
 }
 
 function mostrarMensajeBorrado(origen) {
-  console.log('producto borrado exitosamente.');
-  $('#mensaje-borrado').slideDown(400, () => {
+  console.log("producto borrado exitosamente.");
+  $("#mensaje-borrado").slideDown(400, () => {
     $("#mensaje-borrado").delay(1000).slideUp(400);
   });
-  console.log(origen.parentElement);
   $(origen.parentElement.parentElement).fadeOut();
-}; 
+};
+
+function mostrarMensajeActualizado() {
+  $("#mensaje-actualizado").slideDown(400, () => {
+    $("#mensaje-actualizado").delay(1000).slideUp(400);
+  });
+};
 
 // Access 'productos' from database
 FIREBASE_DB.collection("productos")
@@ -82,16 +87,38 @@ class Producto {
         .get()
         .then((querySnapshot) => {
           // console.log(querySnapshot.docs[indice].id);
-          let test = querySnapshot.docs[indice].id;
+          let id = querySnapshot.docs[indice].id;
           FIREBASE_DB.collection("productos")
-          .doc(test)
-          .delete()
-          .then(() => {
-            mostrarMensajeBorrado(origen);
-          })
-          .catch((error) => {
-            console.error("Error al borrar el producto: ", error);
-          });
+            .doc(id)
+            .delete()
+            .then(() => {
+              mostrarMensajeBorrado(origen);
+            })
+            .catch((error) => {
+              console.error("Error al borrar el producto - ", error);
+            });
+        });
+    };
+    this.actualizar = (origen) => {
+      let precio = origen.parentElement.parentElement.querySelector(
+        ".product-info #precio"
+      ).value;
+      let stock = origen.parentElement.parentElement.querySelector(
+        ".product-info #stock"
+      ).value;
+      console.log(precio);
+      console.log(stock);
+      FIREBASE_DB.collection("productos")
+        .get()
+        .then((querySnapshot) => {
+          let id = querySnapshot.docs[indice].id;
+          FIREBASE_DB.collection("productos").doc(id).update({ stock: stock });
+          FIREBASE_DB.collection("productos").doc(id).update({ precio: precio });
+          mostrarMensajeActualizado();
+
+        })
+        .catch((error) => {
+          console.log(error);
         });
     };
   }
