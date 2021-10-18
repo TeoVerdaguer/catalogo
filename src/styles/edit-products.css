@@ -614,24 +614,25 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 30px;
 }
 
-#mensaje-borrado {
+#mensaje-borrado, #mensaje-actualizado {
   display: none;
   text-align: center;
   background-color: #648fd9;
-  height: 10vh;
+  height: 15vh;
   width: 40vh;
   z-index: 2;
   top: 80vh;
   left: 40vw;
   position: fixed;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #e7e7e7;
   border-radius: 8px;
   box-shadow: 0 0 50px #303030;
 }
 
-#mensaje-borrado h2 {
+#mensaje-borrado h2, #mensaje-actualizado h2 {
   color: #e7e7e7;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1035px) {
@@ -646,6 +647,14 @@ input[type="number"]::-webkit-outer-spin-button {
   }
   div.filters {
     padding-bottom: 0;
+  }
+  #mensaje-borrado, #mensaje-actualizado {
+    height: 15vh;
+    padding: 15px;
+    left: 15vw;
+  }
+  #mensaje-borrado h2, #mensaje-actualizado h2 {
+    font-size: 18px;
   }
 }
 
