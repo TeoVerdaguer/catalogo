@@ -23,6 +23,7 @@ function login() {
       });
   } else {
     for (let i = 0; i < clientes.length; i++) {
+      clientes.includes(parseInt(numeroClienteIngresado)) ? console.log("esta") : console.log("no esta");
       if (clientes[i].numero === parseInt(numeroClienteIngresado)) {
         localStorage.setItem("numCliente", clientes[i].numero);
         localStorage.setItem("nombreCliente", clientes[i].nombre);

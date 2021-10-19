@@ -118,4 +118,7 @@ div.boton-link:active {
   #modal-admin h1 {
     font-size: 30px;
   }
+  #boton-volver {
+    width: 15%;
+  }
 }

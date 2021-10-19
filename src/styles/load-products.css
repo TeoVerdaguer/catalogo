@@ -156,4 +156,7 @@ input#image-file {
   #mensaje-load {
     padding: 0;
   }
+  #boton-volver {
+    width: 15%;
+  }
 }
