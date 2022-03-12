@@ -23,7 +23,9 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
         baseDeDatos[i].precio,
         baseDeDatos[i].marca,
         baseDeDatos[i].img,
-        baseDeDatos[i].stock
+        baseDeDatos[i].stock,
+        baseDeDatos[i].codigo,
+
       )
     );
     listaProductos += `
@@ -35,6 +37,7 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
             loading="lazy"/>
           <div class="product-info">
             <h3 class="product-title">${baseDeDatos[i].nombre}</h3>
+            <h5 class="product-code">${baseDeDatos[i].codigo}</h5>
           </div>
           <div class="logo-marca-container">
             <img src="img/logos/${baseDeDatos[i].marca}-logo.png" class="logo-img">
@@ -61,13 +64,14 @@ FIREBASE_DB.collection("productos")
   });
 
 class Producto {
-  constructor(nombre, precio, marca, img, stock) {
+  constructor(nombre, precio, marca, img, stock, codigo) {
     this.nombre = nombre;
     this.precio = precio;
     this.marca = marca;
     this.img = img;
     this.stock = stock;
     this.cantidad = 0;
+    this.codigo = codigo;
     this.agregarAlCarrito = () => {
 
       if (arrayCarrito.length === 0) {
@@ -88,13 +92,15 @@ class Producto {
         }
       };
 
-      if (this.cantidad === 0 && this.stock > 0) {
-        mostrarMensajeCarrito(this);
-      } else if (this.cantidad < this.stock) {
-        mostrarMensajeCarrito(this);
-      } else {
-        mostrarMensajeSinStock();
-      };
+      // if (this.cantidad === 0 && this.stock > 0) {
+      //   mostrarMensajeCarrito(this);
+      // } else if (this.cantidad < this.stock) {
+      //   mostrarMensajeCarrito(this);
+      // } else {
+      //   mostrarMensajeSinStock();
+      // };
+      mostrarMensajeCarrito(this); // reemplaza lo de arriba
+
       mostrarCantCarrito();
       actualizarCantCarrito();
 
@@ -243,9 +249,8 @@ function cargarCarrito() {
           element.img
         }"></td>    
         <td class="nombre-prod-carrito">${element.nombre}</td>
-        <td><input class="input-cant-carrito" type="number" min="1" max="${
-          element.stock
-        }" value="${element.cantidad}" required></td>
+        <!-- <td><input class="input-cant-carrito" type="number" min="1" max="${element.stock}" value="${element.cantidad}" required></td> -->
+        <td><input class="input-cant-carrito" type="number" min="1" value="${element.cantidad}" required></td> <!-- reemplaza lo de arriba -->
         <td class="precio-prod">${element.precio * element.cantidad}</td>
         <td><a onclick="" class="borrar-carrito fas fa-times fa-lg"></a></td>
       </tr>
@@ -387,6 +392,7 @@ function mostrarMensajePedidoEnviado(msg) {
 
 // Genera el contenido de las cards de los productos filtrados
 function generarCardsProductos(i) {
+  console.log(listaProductos[i].nombre);
   listaFiltradaProductos += `
         <div class="product">
           <img
@@ -396,6 +402,7 @@ function generarCardsProductos(i) {
             loading="lazy"/>
             <div class="product-info">
               <h3 class="product-title">${listadoProductos[i].nombre}</h3>
+              <h5 class="product-code">${listaProductos[i].codigo}</h5>
             </div>
             <div class="logo-marca-container">
               <img src="img/logos/${listadoProductos[i].marca}-logo.png" class="logo-img">
@@ -424,7 +431,8 @@ function filtrarProductos(marca) {
 // filtra las cards de acuerdo al texto de la busqueda
 function filtrarPorBusqueda(valor) {
   for (let i = 0; i < listadoProductos.length; i++) {
-    if (listadoProductos[i].nombre.toLowerCase().includes(valor)) {
+    if (listadoProductos[i].nombre.toLowerCase().includes(valor) || 
+        listadoProductos[i].codigo.toLowerCase().includes(valor)) {
       generarCardsProductos(i);
     } else if (valor === "") {
       generarCardsProductos(i);

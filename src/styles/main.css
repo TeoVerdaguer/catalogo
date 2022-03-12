@@ -320,6 +320,10 @@ img.product-img {
   padding: 10px;
 }
 
+.product-code {
+  font-weight: normal;
+}
+
 .logo-marca-container {
   height: 35px;
   width: 100%;

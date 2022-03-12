@@ -21,6 +21,9 @@ $("#boton-submit").on("click", () => {
       }
       return "img/products/" + filename;
     }
+    else {
+      return "";
+    }
   }
 
   db.collection("productos").add({

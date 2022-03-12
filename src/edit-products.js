@@ -30,6 +30,7 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
           loading="lazy"/>
         <div class="product-info">
           <h3 class="product-title">${baseDeDatos[i].nombre}</h3>
+          <h5 class="product-code">${baseDeDatos[i].codigo}</h5>
           <div class="precio-container">
           Precio: <input type="number" id="precio" class="product-price" value=${baseDeDatos[i].precio}></input>
         </div>
