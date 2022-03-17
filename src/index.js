@@ -1,14 +1,14 @@
-const NUM_ADMIN = 24473443;
+const MAIL_ADMIN = "milirubio1975@gmail.com";
 
 let clientes = [
-  { numero: 123, nombre: "Mateo Verdaguer" },
-  { numero: 456, nombre: "Constanza Verdaguer" },
+  { mail: "milirubio1975@gmail.com", nombre: "Emilio Rubio" },
+  { mail: "mateoverdaguer123@gmail.com", nombre: "Mateo Verdaguer" },
 ];
 
 function login() {
-  let numeroClienteIngresado = document.getElementById("username-input").value;
-
-  if (parseInt(numeroClienteIngresado) === NUM_ADMIN) {
+  let mailClienteIngresado = document.getElementById("username-input").value;
+  console.log(mailClienteIngresado);
+  if (mailClienteIngresado === MAIL_ADMIN) {
     // firebase login with google to enable write permission
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
@@ -23,9 +23,10 @@ function login() {
       });
   } else {
     for (let i = 0; i < clientes.length; i++) {
-      clientes.includes(parseInt(numeroClienteIngresado)) ? console.log("esta") : console.log("no esta");
-      if (clientes[i].numero === parseInt(numeroClienteIngresado)) {
-        localStorage.setItem("numCliente", clientes[i].numero);
+      console.log(clientes[i].mail);
+      clientes[i].mail === mailClienteIngresado ? console.log("esta") : console.log("no esta");
+      if (clientes[i].mail === mailClienteIngresado) {
+        localStorage.setItem("mailCliente", clientes[i].mail);
         localStorage.setItem("nombreCliente", clientes[i].nombre);
         location.href = "/src/home.html";
         break;

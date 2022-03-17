@@ -3,7 +3,7 @@ let listaClientes = [];
 let listaProductos = ``;
 let listadoProductos = [];
 let listaFiltradaProductos = ``;
-let numCliente = localStorage.getItem("numCliente");
+let mailCliente = localStorage.getItem("mailCliente");
 let nombreCliente = localStorage.getItem("nombreCliente");
 let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
@@ -25,7 +25,6 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
         baseDeDatos[i].img,
         baseDeDatos[i].stock,
         baseDeDatos[i].codigo,
-
       )
     );
     listaProductos += `
@@ -392,7 +391,6 @@ function mostrarMensajePedidoEnviado(msg) {
 
 // Genera el contenido de las cards de los productos filtrados
 function generarCardsProductos(i) {
-  console.log(listaProductos[i].nombre);
   listaFiltradaProductos += `
         <div class="product">
           <img
@@ -402,7 +400,7 @@ function generarCardsProductos(i) {
             loading="lazy"/>
             <div class="product-info">
               <h3 class="product-title">${listadoProductos[i].nombre}</h3>
-              <h5 class="product-code">${listaProductos[i].codigo}</h5>
+              <h5 class="product-code">${listadoProductos[i].codigo}</h5>
             </div>
             <div class="logo-marca-container">
               <img src="img/logos/${listadoProductos[i].marca}-logo.png" class="logo-img">
@@ -462,16 +460,16 @@ $(document).ready(function () {
   });
 
   if (
-    localStorage.getItem("numCliente") === "" ||
-    !localStorage.getItem("numCliente")
+    localStorage.getItem("mailCliente") === "" ||
+    !localStorage.getItem("mailCliente")
   ) {
     location.href = "index.html";
   } else {
-    numCliente = JSON.parse(localStorage.getItem("numCliente"));
+    mailCliente = localStorage.getItem("mailCliente");
   }
 
   document.getElementById("btn-cerrar-sesion").addEventListener("click", () => {
-    localStorage.setItem("numCliente", "");
+    localStorage.setItem("mailCliente", "");
   });
 
   // al apretar en una marca ejectuta la funcion de filtrar las cards
