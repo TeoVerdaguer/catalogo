@@ -1,4 +1,4 @@
-const db = firebase.firestore();
+const FIREBASE_DB = firebase.firestore();
 
 $("#boton-submit").on("click", () => {
   let nombre = document.getElementById("pnombre");
@@ -26,7 +26,7 @@ $("#boton-submit").on("click", () => {
     }
   }
 
-  db.collection("productos").add({
+  FIREBASE_DB.collection("productos").add({
     nombre: nombre.value,
     precio: precio.value,
     marca: marca.value,

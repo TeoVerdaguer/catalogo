@@ -56,13 +56,13 @@ div.login-container {
     margin: 10px;
     text-align: center;
   }
-  
+
   #username-input::placeholder {
     padding: 11px;
     font-size: 16px;
   }
   
-  #boton-login, #boton-registro {
+  #boton-registro {
     margin: 10px;
     width: 140px;
     height: 40px;
@@ -72,8 +72,15 @@ div.login-container {
     color: #ffffff;
     font-size: 16px;
   }
+
+  #boton-registro:disabled,
+  #boton-registro[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+  }
   
   #cargando {
+    display: none;
     position: fixed;
     z-index: 10;
     top: 20%;
@@ -123,4 +130,13 @@ div.login-container {
   .datos-container input {
     margin: 0 0 10px 0;
     height: 30px;
+  }
+
+  #mensaje-error {
+    color: #b80000;
+    display: none;
+  }
+
+  #mensaje-exitoso {
+    display: none;
   }

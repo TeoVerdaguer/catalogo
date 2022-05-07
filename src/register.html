@@ -7,7 +7,7 @@
     <link rel="icon" href="/src/favicon.ico" type="image/x-icon" />
     <title>Emilio Rubio Repuestos</title>
     <!-- Imports -->
-    <link rel="stylesheet" href="src/styles/login.css" />
+    <link rel="stylesheet" href="/src/styles/register.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -16,7 +16,9 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <!-- Importing Firebase -->
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/021c790162.js" crossorigin="anonymous"></script>
+    <!-- Importing Firebase -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
@@ -43,27 +45,32 @@
     </script>
   </head>
   <body>
-    <!-- Modal login -->
+    <!-- registro de nuevos usuarios -->
     <div class="banner"></div>
     <div class="login-container">
+      <!-- Animacion cargando -->
+    <div id="cargando">
+      <i class="fas fa-spinner fa-3x fa-spin"></i>
+    </div>
       <div id="modal-login">
-        <img src="/src/img/er-logo.png" alt="ER repuestos logo" class="img-logo">
-        <p id="mensaje-login">
-          Ingrese su email para poder acceder al catalogo
-        </p>
+          <h2>Bienvenido, ingrese sus datos para registrarse</h2>
+          <div class="datos-container">
+            <form>
+              Email: <input type="email" id="new-user-email" placeholder="email" required/>
+              Nombre del negocio: <input type="text" id="new-user-nombre" placeholder="nombre" required/>
+              Razon Social: <input type="text" id="new-user-razon" placeholder="razon social" required/>
+              CUIT: <input type="text" id="new-user-cuit" placeholder="cuit" required/>
+              Telefono: <input type="number" id="new-user-tel" placeholder="telefono" required/>
+            </form>
+          </div>
+          <h3 id="mensaje-error">Error!</h3>
+          <h3 id="mensaje-exitoso">Se registro exitosamente</h3>
+          <button id="boton-registro" type="submit">Registrarse</button>
+        </div>
 
-        <input
-          type="text"
-          name="username"
-          id="username-input"
-          autofocus
-          placeholder="email"
-          autocomplete="off" />
-
-        <button id="boton-login" type="submit">Ingresar</button>
       </div>
     </div>
 
-    <script src="src/index.js"></script>
+    <script src="/src/register.js"></script>
   </body>
 </html>

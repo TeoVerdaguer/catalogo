@@ -8,7 +8,6 @@ let nombreCliente = localStorage.getItem("nombreCliente");
 let searchInput = document.getElementById("search-bar");
 let tablaProdu = document.getElementById("produ").innerHTML;
 let productosDeFirebase = [];
-const FIREBASE_DB = firebase.firestore();
 const EMAIL_USUARIO = "verdaguermateo@gmail.com";
 const MI_EMAIL = "repuestos.pedidos2021@gmail.com";
 let arrayCarrito = [];
