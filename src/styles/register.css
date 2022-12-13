@@ -125,11 +125,17 @@ div.login-container {
     display: flex;
     flex-direction: column;
     margin: 40px 0;
+    width: 200px;
   }
 
   .datos-container input {
     margin: 0 0 10px 0;
     height: 30px;
+  }
+
+  .form-registro {
+    display: flex;
+    flex-direction: column;
   }
 
   #mensaje-error {

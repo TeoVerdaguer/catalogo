@@ -1,5 +1,23 @@
 const FIREBASE_DB = firebase.firestore();
 
+// $(function () {
+//   $.getJSON("LISTA.json", function (data) {
+//     for (let i = 0; i < data.length; i++) {
+//       console.log(data[i]);
+//       FIREBASE_DB.collection("productos").add({
+//         nombre: data[i].nombre,
+//         precio: data[i].precio,
+//         marca: data[i].marca,
+//         codigo: data[i].codigo,
+//         descripcion: data[i].descripcion,
+//         img: "",
+//         stock: data[i].stock,
+//       });
+//     }    
+//   });
+// });
+
+
 $("#boton-submit").on("click", () => {
   let nombre = document.getElementById("pnombre");
   let precio = document.getElementById("pprecio");

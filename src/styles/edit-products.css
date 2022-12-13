@@ -348,9 +348,7 @@ div.filter-box a:hover {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  width: 300px;
   min-height: 300px;
-  max-height: 500px;
 }
 
 img.product-img {
@@ -365,6 +363,7 @@ img.product-img {
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
+  margin-top: 30px;
 }
 
 .product-info input {

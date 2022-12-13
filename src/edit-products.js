@@ -29,14 +29,22 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
           alt="imagen-del-producto
           loading="lazy"/>
         <div class="product-info">
-
-          <input type="text" id="nombre"  value="${baseDeDatos[i].nombre}"></input>
-          <input type="text" id="nombre"  value="${baseDeDatos[i].codigo}"></input>
-          <div class="precio-container">
-          Precio: <input type="number" id="precio" class="product-price" value=${baseDeDatos[i].precio}></input>
-        </div>
+        Imagen: <input id="imagen" type="file" />
+        Nombre: 
         <div>
-          Stock: <input type="number" id="stock" class="product-stock" value=${baseDeDatos[i].stock}></input>
+          <input type="text" id="nombre"  value="${baseDeDatos[i].nombre}"></input>
+        </div>
+        Codigo: 
+        <div>
+          <input type="text" id="codigo"  value="${baseDeDatos[i].codigo}"></input>
+        </div>
+        Precio: 
+        <div class="precio-container">
+          <input type="number" id="precio" class="product-price" value=${baseDeDatos[i].precio}></input>
+        </div>
+        Stock: 
+        <div>
+          <input type="number" id="stock" class="product-stock" value=${baseDeDatos[i].stock}></input>
         </div>
         </div>
         <div class="logo-marca-container">
@@ -47,6 +55,23 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
       </div>`;
   }
   document.getElementById("products").innerHTML = listaProductos;
+}
+
+function obtenerLinkImg(imagen) {
+  if (imagen) {
+    let startIndex =
+      imagen.indexOf("\\") >= 0
+        ? imagen.lastIndexOf("\\")
+        : imagen.lastIndexOf("/");
+    let filename = imagen.substring(startIndex);
+    if (filename.indexOf("\\") === 0 || filename.indexOf("/") === 0) {
+      filename = filename.substring(1);
+    }
+    return "img/products/" + filename;
+  }
+  else {
+    return "";
+  }
 }
 
 function mostrarMensajeBorrado(origen) {
@@ -102,20 +127,36 @@ class Producto {
         });
     };
     this.actualizar = (origen) => {
+      let img = obtenerLinkImg(origen.parentElement.parentElement.querySelector(
+        ".product-info #imagen"
+      ).value);
+      let nombre = origen.parentElement.parentElement.querySelector(
+        ".product-info #nombre"
+      ).value;
+      let codigo = origen.parentElement.parentElement.querySelector(
+        ".product-info #codigo"
+      ).value;
       let precio = origen.parentElement.parentElement.querySelector(
         ".product-info #precio"
       ).value;
       let stock = origen.parentElement.parentElement.querySelector(
         ".product-info #stock"
       ).value;
+      console.log(img);
+      console.log(nombre);
+      console.log(codigo);
       console.log(precio);
       console.log(stock);
       FIREBASE_DB.collection("productos")
         .get()
         .then((querySnapshot) => {
           let id = querySnapshot.docs[indice].id;
-          FIREBASE_DB.collection("productos").doc(id).update({ stock: stock });
+
+          FIREBASE_DB.collection("productos").doc(id).update({ img: img });
+          FIREBASE_DB.collection("productos").doc(id).update({ nombre: nombre });
+          FIREBASE_DB.collection("productos").doc(id).update({ codigo: codigo });
           FIREBASE_DB.collection("productos").doc(id).update({ precio: precio });
+          FIREBASE_DB.collection("productos").doc(id).update({ stock: stock });
           mostrarMensajeActualizado();
 
         })

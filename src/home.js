@@ -249,6 +249,7 @@ function cargarCarrito() {
         <td class="nombre-prod-carrito">${element.nombre}</td>
         <!-- <td><input class="input-cant-carrito" type="number" min="1" max="${element.stock}" value="${element.cantidad}" required></td> -->
         <td><input class="input-cant-carrito" type="number" min="1" value="${element.cantidad}" required></td> <!-- reemplaza lo de arriba -->
+        ${element.precio}
         <td class="precio-prod">${element.precio * element.cantidad}</td>
         <td><a onclick="" class="borrar-carrito fas fa-times fa-lg"></a></td>
       </tr>
