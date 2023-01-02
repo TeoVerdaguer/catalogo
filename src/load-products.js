@@ -1,7 +1,7 @@
 const FIREBASE_DB = firebase.firestore();
 
 // $(function () {
-//   $.getJSON("LISTA.json", function (data) {
+//   $.getJSON("listaRepuestos.json", function (data) {
 //     for (let i = 0; i < data.length; i++) {
 //       console.log(data[i]);
 //       FIREBASE_DB.collection("productos").add({
@@ -10,8 +10,8 @@ const FIREBASE_DB = firebase.firestore();
 //         marca: data[i].marca,
 //         codigo: data[i].codigo,
 //         descripcion: data[i].descripcion,
-//         img: "",
 //         stock: data[i].stock,
+//         img: data[i].img
 //       });
 //     }    
 //   });
