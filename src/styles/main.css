@@ -305,9 +305,10 @@ div.filter-box a:hover {
 }
 
 img.product-img {
-  width: 200px;
   justify-self: flex-start;
   align-self: center;
+  max-height: 313px;
+  max-width: 250px;
 }
 
 .product-info {
