@@ -31,6 +31,7 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
             class="product-img"
             src="/src/img/products/${baseDeDatos[i].img}"
             alt="imagen-del-producto"
+            onerror="this.onerror=null;this.src='/src/img/no-img.png';"
             loading="lazy"/>
           <div class="product-info">
             <h3 class="product-title">${baseDeDatos[i].nombre}</h3>
@@ -237,9 +238,19 @@ function cerrarCarrito() {
 // genera el contenido del modal del carrito
 function cargarCarrito() {
     arrayCarrito.forEach((element) => {
+        console.log(element.img);
+
+        if (element.precio === 'S/STOCK') {
+            element.precio = 0;
+        } else if (element.precio === 'CONSULTAR') {
+            element.precio = 0;
+        } else {
+            element.precio = parseFloat(element.precio);
+        }
+
         tablaProdu += `
       <tr>
-        <td class="table-img"><img class="img-prod-carrito" src="${
+        <td class="table-img"><img class="img-prod-carrito" src="/src/img/products/${
             element.img
         }"></td>    
         <td class="nombre-prod-carrito">${element.nombre}</td>
@@ -397,7 +408,7 @@ function generarCardsProductos(i) {
             class="product-img"
             src="/src/img/products/${listadoProductos[i].img}"
             alt="imagen-del-producto"
-            onerror="${console.log(this)}"
+            onerror="this.onerror=null;this.src='/src/img/no-img.png';"
             loading="lazy"/>
             <div class="product-info">
               <h3 class="product-title">${listadoProductos[i].nombre}</h3>
