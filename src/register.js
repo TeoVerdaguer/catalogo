@@ -32,16 +32,19 @@ function mostrarMensajeRegistrado() {
     document.getElementById("boton-registro").disabled = true;
     document.getElementById('mensaje-exitoso').style.display = 'block';
 
+    setTimeout(()=> {
+        location.href = "/src/home.html";
+     }
+     ,3000);
 }
 
 function validarForm(mail, nombre, razon, cuit, tel) {
     if (mail.length === 0) {
-        console.log("mail vacio");
+        console.log("no se ingreso un email");
         formValido = false;
     } else {
       formValido = true;
     }
-    
 }
 
 $("#boton-registro").on("click", () => {
