@@ -25,9 +25,11 @@ function getBaseDeDatosDeFirebase(baseDeDatos) {
       <div class="product">
         <img
           class="product-img"
-          src="${baseDeDatos[i].img}"
-          alt="imagen-del-producto
-          loading="lazy"/>
+          src="/src/img/products/${baseDeDatos[i].img}"
+          alt="imagen-del-producto"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='/src/img/no-img.png';"
+        />
         <div class="product-info">
         Imagen: <input id="imagen" type="file" />
         Nombre: 
