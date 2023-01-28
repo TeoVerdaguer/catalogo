@@ -429,7 +429,9 @@ function generarCardsProductos(i) {
 // filtra los productos de acuerdo a la marca seleccionada
 function filtrarProductos(marca) {
     for (let i = 0; i < listadoProductos.length; i++) {
-        if (listadoProductos[i].marca === marca) {
+        console.log(listadoProductos[i].marca);
+        if ((listadoProductos[i].marca).toUpperCase() === marca.toUpperCase()) {
+            console.log('test');
             generarCardsProductos(i);
         } else if (marca === "todas") {
             generarCardsProductos(i);
@@ -442,10 +444,11 @@ function filtrarProductos(marca) {
 
 // filtra las cards de acuerdo al texto de la busqueda
 function filtrarPorBusqueda(valor) {
+    let valorLower = valor.toLowerCase();
     for (let i = 0; i < listadoProductos.length; i++) {
         if (
-            listadoProductos[i].nombre.toLowerCase().includes(valor) ||
-            listadoProductos[i].codigo.toLowerCase().includes(valor)
+            (listadoProductos[i].nombre).toLowerCase().includes(valorLower) ||
+            listadoProductos[i].codigo.toLowerCase().includes(valorLower)
         ) {
             generarCardsProductos(i);
         } else if (valor === "") {

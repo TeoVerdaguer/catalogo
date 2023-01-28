@@ -30,7 +30,7 @@ div.banner {
 
 #boton-volver {
   height: 90%;
-  width: 5%;
+  width: 60px;
   background-color: #5f6a7d;
   border-radius: 8px;
   display: flex;
@@ -276,6 +276,9 @@ p#numero {
   #mensaje-carrito {
     width: 90vw;
     box-shadow: 7px 7px 10px #303030;
+  }
+  .logo {
+    font-size: 12px;
   }
 }
 
@@ -661,7 +664,7 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 18px;
   }
   #boton-volver {
-    width: 15%;
+    width: 60px;
   }
 }
 

@@ -159,6 +159,9 @@ nav {
   .social-container {
     margin: 0;
   }
+  .logo {
+    font-size: 12px;
+  }
 }
 
 .nav-active {

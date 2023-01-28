@@ -16,6 +16,10 @@ body {
 }
 
 /*  Modal Admin */
+.title {
+    font-size: 2em;
+}
+
 div.banner {
   width: 100vw;
   height: 5vh;
@@ -25,7 +29,7 @@ div.banner {
 
 #boton-volver {
   height: 90%;
-  width: 5%;
+  width: 60px;
   background-color: #5f6a7d;
   border-radius: 8px;
   display: flex;
@@ -111,6 +115,10 @@ div.boton-link:active {
     padding: 10px;
   }
   
+  .title {
+    font-size: 1em;
+  }
+
   div.boton-link {
     width: 90vw;
   }
@@ -119,6 +127,6 @@ div.boton-link:active {
     font-size: 30px;
   }
   #boton-volver {
-    width: 15%;
+    width: 60px;
   }
 }
