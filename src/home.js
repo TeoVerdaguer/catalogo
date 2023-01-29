@@ -94,7 +94,7 @@ class Producto {
             // } else {
             //   mostrarMensajeSinStock();
             // };
-            mostrarMensajeCarrito(this); // reemplaza lo de arriba
+            mostrarMensajeCarrito(this); // reemplaza lo de arriba al no usar stock
 
             mostrarCantCarrito();
             actualizarCantCarrito();
@@ -238,8 +238,6 @@ function cerrarCarrito() {
 // genera el contenido del modal del carrito
 function cargarCarrito() {
     arrayCarrito.forEach((element) => {
-        console.log(element.img);
-
         if (element.precio === 'S/STOCK') {
             element.precio = 0;
         } else if (element.precio === 'CONSULTAR') {
@@ -254,13 +252,7 @@ function cargarCarrito() {
             element.img
         }"></td>    
         <td class="nombre-prod-carrito">${element.nombre}</td>
-        <!-- <td><input class="input-cant-carrito" type="number" min="1" max="${
-            element.stock
-        }" value="${element.cantidad}" required></td> -->
-        <td><input class="input-cant-carrito" type="number" min="1" value="${
-            element.cantidad
-        }" required></td> <!-- reemplaza lo de arriba -->
-        ${element.precio}
+        <td><input class="input-cant-carrito" type="number" min="1" value="${element.cantidad}" required></td>
         <td class="precio-prod">${element.precio * element.cantidad}</td>
         <td><a onclick="" class="borrar-carrito fas fa-times fa-lg"></a></td>
       </tr>
